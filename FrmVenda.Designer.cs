@@ -49,11 +49,11 @@
             this.lblValorUnitario = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btnSubtrair = new System.Windows.Forms.Button();
             this.btnConfirmaQuantidade = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnSubtrair = new System.Windows.Forms.Button();
             this.btnFinalizarCompra = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAddProdutos = new System.Windows.Forms.Button();
@@ -277,6 +277,18 @@
             this.panel7.Size = new System.Drawing.Size(266, 118);
             this.panel7.TabIndex = 9;
             // 
+            // btnSubtrair
+            // 
+            this.btnSubtrair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(131)))), ((int)(((byte)(121)))));
+            this.btnSubtrair.FlatAppearance.BorderSize = 0;
+            this.btnSubtrair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubtrair.Image = ((System.Drawing.Image)(resources.GetObject("btnSubtrair.Image")));
+            this.btnSubtrair.Location = new System.Drawing.Point(54, 63);
+            this.btnSubtrair.Name = "btnSubtrair";
+            this.btnSubtrair.Size = new System.Drawing.Size(43, 40);
+            this.btnSubtrair.TabIndex = 5;
+            this.btnSubtrair.UseVisualStyleBackColor = false;
+            // 
             // btnConfirmaQuantidade
             // 
             this.btnConfirmaQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(213)))), ((int)(((byte)(108)))));
@@ -324,18 +336,6 @@
             this.label13.Size = new System.Drawing.Size(153, 30);
             this.label13.TabIndex = 0;
             this.label13.Text = "QUANTIDADE";
-            // 
-            // btnSubtrair
-            // 
-            this.btnSubtrair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(131)))), ((int)(((byte)(121)))));
-            this.btnSubtrair.FlatAppearance.BorderSize = 0;
-            this.btnSubtrair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubtrair.Image = ((System.Drawing.Image)(resources.GetObject("btnSubtrair.Image")));
-            this.btnSubtrair.Location = new System.Drawing.Point(54, 63);
-            this.btnSubtrair.Name = "btnSubtrair";
-            this.btnSubtrair.Size = new System.Drawing.Size(43, 40);
-            this.btnSubtrair.TabIndex = 5;
-            this.btnSubtrair.UseVisualStyleBackColor = false;
             // 
             // btnFinalizarCompra
             // 
