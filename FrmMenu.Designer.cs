@@ -35,12 +35,12 @@
             this.btnVenda = new System.Windows.Forms.Button();
             this.panelCadastro = new System.Windows.Forms.Panel();
             this.btnCadastroJogos = new System.Windows.Forms.Button();
+            this.btnCadastroArtigos = new System.Windows.Forms.Button();
             this.btnCadastroClientes = new System.Windows.Forms.Button();
             this.btnCadastro = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCadastroArtigos = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -102,6 +102,15 @@
             this.btnCadastroJogos.UseVisualStyleBackColor = true;
             this.btnCadastroJogos.Click += new System.EventHandler(this.btnCadastroJogos_Click);
             // 
+            // btnCadastroArtigos
+            // 
+            resources.ApplyResources(this.btnCadastroArtigos, "btnCadastroArtigos");
+            this.btnCadastroArtigos.FlatAppearance.BorderSize = 0;
+            this.btnCadastroArtigos.ForeColor = System.Drawing.Color.White;
+            this.btnCadastroArtigos.Name = "btnCadastroArtigos";
+            this.btnCadastroArtigos.UseVisualStyleBackColor = true;
+            this.btnCadastroArtigos.Click += new System.EventHandler(this.btnCadastroArtigos_Click);
+            // 
             // btnCadastroClientes
             // 
             resources.ApplyResources(this.btnCadastroClientes, "btnCadastroClientes");
@@ -120,10 +129,16 @@
             this.btnCadastro.UseVisualStyleBackColor = true;
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Image = global::TOP_Games.Properties.Resources.topGames_200_200;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
@@ -133,22 +148,6 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(159)))));
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
-            // 
-            // btnCadastroArtigos
-            // 
-            resources.ApplyResources(this.btnCadastroArtigos, "btnCadastroArtigos");
-            this.btnCadastroArtigos.FlatAppearance.BorderSize = 0;
-            this.btnCadastroArtigos.ForeColor = System.Drawing.Color.White;
-            this.btnCadastroArtigos.Name = "btnCadastroArtigos";
-            this.btnCadastroArtigos.UseVisualStyleBackColor = true;
-            this.btnCadastroArtigos.Click += new System.EventHandler(this.btnCadastroArtigos_Click);
-            // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Image = global::TOP_Games.Properties.Resources.topGames_200_200;
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
             // 
             // FrmMenu
             // 
