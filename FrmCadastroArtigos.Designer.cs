@@ -35,15 +35,15 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDescricao = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtPrecoVenda = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCadArtigos = new System.Windows.Forms.DataGridView();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtDescricao = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadArtigos)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +51,7 @@
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(213)))), ((int)(((byte)(108)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
@@ -65,6 +66,7 @@
             // btnApagar
             // 
             this.btnApagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(78)))), ((int)(((byte)(93)))));
+            this.btnApagar.FlatAppearance.BorderSize = 0;
             this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApagar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnApagar.ForeColor = System.Drawing.Color.Black;
@@ -79,6 +81,7 @@
             // btnAtualizar
             // 
             this.btnAtualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(235)))), ((int)(((byte)(176)))));
+            this.btnAtualizar.FlatAppearance.BorderSize = 0;
             this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnAtualizar.ForeColor = System.Drawing.Color.Black;
@@ -93,6 +96,7 @@
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(210)))), ((int)(((byte)(240)))));
+            this.btnCadastrar.FlatAppearance.BorderSize = 0;
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnCadastrar.ForeColor = System.Drawing.Color.Black;
@@ -137,6 +141,29 @@
             this.panel1.Size = new System.Drawing.Size(257, 243);
             this.panel1.TabIndex = 10;
             // 
+            // txtDescricao
+            // 
+            this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDescricao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtDescricao.Location = new System.Drawing.Point(0, 144);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(257, 96);
+            this.txtDescricao.TabIndex = 15;
+            this.txtDescricao.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(0, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 21);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Descrição";
+            // 
             // txtPrecoVenda
             // 
             this.txtPrecoVenda.Dock = System.Windows.Forms.DockStyle.Top;
@@ -157,6 +184,27 @@
             this.label7.Size = new System.Drawing.Size(124, 21);
             this.label7.TabIndex = 12;
             this.label7.Text = "Preço de Venda";
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtQuantidade.Location = new System.Drawing.Point(0, 62);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(257, 20);
+            this.txtQuantidade.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(0, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 21);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Quantidade";
             // 
             // txtNome
             // 
@@ -186,50 +234,6 @@
             this.dgvCadArtigos.Name = "dgvCadArtigos";
             this.dgvCadArtigos.Size = new System.Drawing.Size(616, 495);
             this.dgvCadArtigos.TabIndex = 9;
-            // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtQuantidade.Location = new System.Drawing.Point(0, 62);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(257, 20);
-            this.txtQuantidade.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(0, 41);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 21);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Quantidade";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(0, 123);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 21);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Descrição";
-            // 
-            // txtDescricao
-            // 
-            this.txtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescricao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtDescricao.Location = new System.Drawing.Point(0, 144);
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(257, 96);
-            this.txtDescricao.TabIndex = 15;
-            this.txtDescricao.Text = "";
             // 
             // FrmCadastroArtigos
             // 

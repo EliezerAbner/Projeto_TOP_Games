@@ -35,12 +35,18 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTelContato = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCpf = new System.Windows.Forms.TextBox();
@@ -50,12 +56,6 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCadClientes = new System.Windows.Forms.DataGridView();
-            this.txtBairro = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtCidade = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadClientes)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,7 @@
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(213)))), ((int)(((byte)(108)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
@@ -77,6 +78,7 @@
             // btnApagar
             // 
             this.btnApagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(78)))), ((int)(((byte)(93)))));
+            this.btnApagar.FlatAppearance.BorderSize = 0;
             this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApagar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnApagar.ForeColor = System.Drawing.Color.Black;
@@ -91,6 +93,7 @@
             // btnAtualizar
             // 
             this.btnAtualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(235)))), ((int)(((byte)(176)))));
+            this.btnAtualizar.FlatAppearance.BorderSize = 0;
             this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnAtualizar.ForeColor = System.Drawing.Color.Black;
@@ -105,6 +108,7 @@
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(210)))), ((int)(((byte)(240)))));
+            this.btnCadastrar.FlatAppearance.BorderSize = 0;
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnCadastrar.ForeColor = System.Drawing.Color.Black;
@@ -160,6 +164,49 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(257, 413);
             this.panel1.TabIndex = 10;
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtCidade.Location = new System.Drawing.Point(0, 390);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(257, 20);
+            this.txtCidade.TabIndex = 17;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label10.Location = new System.Drawing.Point(0, 369);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 21);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "Cidade";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // txtBairro
+            // 
+            this.txtBairro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtBairro.Location = new System.Drawing.Point(0, 349);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(257, 20);
+            this.txtBairro.TabIndex = 15;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label9.Location = new System.Drawing.Point(0, 328);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 21);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Bairro";
             // 
             // txtNumero
             // 
@@ -223,6 +270,27 @@
             this.label5.Size = new System.Drawing.Size(97, 21);
             this.label5.TabIndex = 8;
             this.label5.Text = "Tel. Contato";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtEmail.Location = new System.Drawing.Point(0, 185);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(257, 20);
+            this.txtEmail.TabIndex = 19;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label11.Location = new System.Drawing.Point(0, 164);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(48, 21);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Email";
             // 
             // txtCelular
             // 
@@ -315,70 +383,6 @@
             this.dgvCadClientes.Name = "dgvCadClientes";
             this.dgvCadClientes.Size = new System.Drawing.Size(616, 495);
             this.dgvCadClientes.TabIndex = 9;
-            // 
-            // txtBairro
-            // 
-            this.txtBairro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtBairro.Location = new System.Drawing.Point(0, 349);
-            this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(257, 20);
-            this.txtBairro.TabIndex = 15;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(0, 328);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 21);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Bairro";
-            // 
-            // txtCidade
-            // 
-            this.txtCidade.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtCidade.Location = new System.Drawing.Point(0, 390);
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(257, 20);
-            this.txtCidade.TabIndex = 17;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label10.Location = new System.Drawing.Point(0, 369);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 21);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Cidade";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtEmail.Location = new System.Drawing.Point(0, 185);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(257, 20);
-            this.txtEmail.TabIndex = 19;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label11.Location = new System.Drawing.Point(0, 164);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 21);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Email";
             // 
             // FrmCadastroClientes
             // 

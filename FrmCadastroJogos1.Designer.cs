@@ -58,6 +58,7 @@
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(213)))), ((int)(((byte)(108)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btnBuscar, "btnBuscar");
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
             this.btnBuscar.Name = "btnBuscar";
@@ -66,6 +67,7 @@
             // btnApagar
             // 
             this.btnApagar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(78)))), ((int)(((byte)(93)))));
+            this.btnApagar.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btnApagar, "btnApagar");
             this.btnApagar.ForeColor = System.Drawing.Color.Black;
             this.btnApagar.Name = "btnApagar";
@@ -74,6 +76,7 @@
             // btnAtualizar
             // 
             this.btnAtualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(235)))), ((int)(((byte)(176)))));
+            this.btnAtualizar.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btnAtualizar, "btnAtualizar");
             this.btnAtualizar.ForeColor = System.Drawing.Color.Black;
             this.btnAtualizar.Name = "btnAtualizar";
@@ -82,6 +85,7 @@
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(210)))), ((int)(((byte)(240)))));
+            this.btnCadastrar.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btnCadastrar, "btnCadastrar");
             this.btnCadastrar.ForeColor = System.Drawing.Color.Black;
             this.btnCadastrar.Name = "btnCadastrar";
