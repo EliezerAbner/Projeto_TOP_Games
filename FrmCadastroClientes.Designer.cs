@@ -119,6 +119,7 @@
             this.btnCadastrar.TabIndex = 13;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // txtId
             // 
@@ -403,6 +404,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmCadastroClientes";
             this.Text = "FrmCadastroClientes";
+            this.Load += new System.EventHandler(this.FrmCadastroClientes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadClientes)).EndInit();
