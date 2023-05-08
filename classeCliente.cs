@@ -35,7 +35,7 @@ namespace TOP_Games
             while (dr.Read())
             {
                 Cliente cli = new Cliente();
-                cli.Id = (int)dr["Id"];
+                cli.Id = (int)dr["clienteId"];
                 cli.nome = dr["nome"].ToString();
                 cli.dataNascimento = dr["dataNascimento"].ToString();
                 cli.cpf = dr["cpf"].ToString();
@@ -49,15 +49,17 @@ namespace TOP_Games
             return li;
         }
 
-        public void Cadastrar(string nome, string dataNascimento, string cpf, string []telefone, string email, string logradouro, string numero, string bairro, string cidade)
+        public void Cadastrar(string nome, string dataNascimento, string cpf, string[] telefone, string email, string logradouro, string numero, string bairro, string cidade)
         {
             string sql = "INSERT INTO Clientes(nome, dataNascimento, cpf, email, logradouro, numero, bairro, cidade) VALUES ('" + nome + "', '" + dataNascimento + "', '" + cpf + "', '" + email + "', '" + logradouro + "', '" + numero + "', '" + bairro + "', '" + cidade + "')";
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.ExecuteNonQuery();
-            var clienteId = cmd.ExecuteScalar();
             con.Close();
 
+            /* 
+             * cade o id do cliente? :(
+            */
             foreach (string telefones in telefone)
             {
                 string sqlTelefone = "INSERT INTO Telefones(clienteId, telefone) VALUES('" + clienteId + "', '" + telefones + "',)";
@@ -66,6 +68,7 @@ namespace TOP_Games
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
+            
         }
 
         public void Atualizar(int Id, string nome, string dataNascimento, string cpf, string[] telefone, string email, string logradouro, string numero, string bairro, string cidade)
