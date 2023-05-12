@@ -15,8 +15,8 @@ namespace TOP_Games
         public string nome { get; set; }
         public string dataNascimento { get; set; }
         public string cpf { get; set; }
-        public string celular { get; set; }
-        public string telContato { get; set; }
+        public string[] telefone { get; set; }
+        public string[] telefoneId { get; set; }
         public string email { get; set; }
         public string logradouro { get; set; }
         public string numero { get; set; }
@@ -57,47 +57,89 @@ namespace TOP_Games
             cmd.ExecuteNonQuery();
             con.Close();
 
-            /* 
-             * cade o id do cliente? :(
-            */
+            con.Open();
+            string sqlId = "SELECT IDENT_CURRENT('Clientes') AS sqlId";
+            SqlCommand cmd2 = new SqlCommand(sqlId, con);
+            string clienteId = Convert.ToString(cmd2.ExecuteScalar());
+            con.Close();
+
             foreach (string telefones in telefone)
             {
-                string sqlTelefone = "INSERT INTO Telefones(clienteId, telefone) VALUES('" + clienteId + "', '" + telefones + "',)";
+                string sqlTelefone = "INSERT INTO Telefones(clienteId, telefone) VALUES('" + clienteId + "', '" + telefones + "')";
                 con.Open();
                 SqlCommand cmdTelefone = new SqlCommand(sqlTelefone, con);
-                cmd.ExecuteNonQuery();
+                cmdTelefone.ExecuteNonQuery();
                 con.Close();
             }
-            
         }
 
         public void Atualizar(int Id, string nome, string dataNascimento, string cpf, string[] telefone, string email, string logradouro, string numero, string bairro, string cidade)
         {
-            string sql = "UPDATE Cliente SET nome='" + nome + "', dataNascimento= '" + dataNascimento + "', cpf='" + cpf + "', email='" + email + "', logradouro='" + logradouro + "', numero='" + numero + "', bairro='" + bairro + "', cidade='" + cidade + "'";
+            string sql = "UPDATE Clientes SET nome='" + nome + "', dataNascimento= '" + dataNascimento + "', cpf='" + cpf + "', email='" + email + "', logradouro='" + logradouro + "', numero='" + numero + "', bairro='" + bairro + "', cidade='" + cidade + "' WHERE clienteId = '"+Id+"'";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            Cliente buscaTelefone = new Cliente();
+            buscaTelefone.Buscar(Id);
+            string[] idTelefone = buscaTelefone.telefoneId;
+
+
+            for(int i = 0; i < telefone.Length; i++)
+            {
+                string sqlTelefone = "UPDATE Telefones SET telefone='" + telefone[i] +"' WHERE clienteId='"+Id+"' AND telefoneId='" + idTelefone[i] +"'";
+                con.Open();
+                SqlCommand cmdTelefone = new SqlCommand(sqlTelefone, con);
+                cmdTelefone.ExecuteNonQuery();
+                con.Close();
+            }
         }
 
-        public void Apagar(int id)
+        public void Apagar(int Id)
         {
 
         }
-        public void Buscar(int id)
+        public void Buscar(int Id)
         {
+            string sql = "SELECT * from Clientes WHERE clienteId='" + Id + "'";
+            con.Open();
+            SqlCommand buscaCliente = new SqlCommand(sql, con);
+            SqlDataReader dr = buscaCliente.ExecuteReader();
+            while (dr.Read())
+            {
+                nome = dr["nome"].ToString();
+                dataNascimento = dr["dataNascimento"].ToString();
+                cpf = dr["cpf"].ToString();
+                email = dr["email"].ToString();
+                logradouro = dr["logradouro"].ToString();
+                numero = dr["numero"].ToString();
+                bairro = dr["bairro"].ToString();
+                cidade = dr["cidade"].ToString();
+            }
+            con.Close();
 
+            string sqlTelefone = "SELECT * from Telefones WHERE clienteId='" + Id + "'";
+            con.Open();
+            SqlCommand buscaTelefone = new SqlCommand (sqlTelefone, con);
+            SqlDataReader dataReader = buscaTelefone.ExecuteReader();
+            if (dataReader.HasRows)
+            {
+                int contador = 0;
+
+                while (dataReader.Read())
+                {
+                    telefone[contador] = dataReader["telefone"].ToString();
+                    telefoneId[contador] = dataReader["telefoneId"].ToString();
+                    contador++;
+                }
+            }
+            con.Close();
         }
 
-        public void Check(int id)
+        public void Check(int Id)
         {
 
         }
     }
 }
-
-/*
-string sql = "INSERT INTO Cliente(nome, celular, email, cidade) VALUES ('" + nome + "', '" + celular + "', '" + email + "', '" + cidade + "') ";
-con.Open();
-SqlCommand cmd = new SqlCommand(sql, con);
-cmd.ExecuteNonQuery();
-con.Close();
-*/
-
-//criar tabela itens :)

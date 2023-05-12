@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classeArtigo.cs" />
     <Compile Include="FormSplash.cs">
       <SubType>Form</SubType>
     </Compile>
