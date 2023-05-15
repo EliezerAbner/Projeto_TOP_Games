@@ -62,6 +62,7 @@
             this.btnBuscar.TabIndex = 16;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnApagar
             // 
@@ -77,6 +78,7 @@
             this.btnApagar.TabIndex = 15;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = false;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // btnAtualizar
             // 
@@ -92,6 +94,7 @@
             this.btnAtualizar.TabIndex = 14;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnCadastrar
             // 
@@ -107,6 +110,7 @@
             this.btnCadastrar.TabIndex = 13;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // txtId
             // 
@@ -254,6 +258,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmCadastroArtigos";
             this.Text = "FrmCadastroArtigos";
+            this.Load += new System.EventHandler(this.FrmCadastroArtigos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadArtigos)).EndInit();

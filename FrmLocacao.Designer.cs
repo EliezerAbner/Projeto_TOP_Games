@@ -51,6 +51,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.calendario = new System.Windows.Forms.MonthCalendar();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -58,6 +65,8 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOk
@@ -116,7 +125,7 @@
             // 
             this.panel6.Controls.Add(this.lblPlataforma);
             this.panel6.Controls.Add(this.label11);
-            this.panel6.Location = new System.Drawing.Point(12, 212);
+            this.panel6.Location = new System.Drawing.Point(694, 36);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(266, 66);
             this.panel6.TabIndex = 20;
@@ -148,7 +157,7 @@
             // 
             this.panel5.Controls.Add(this.lblJogo);
             this.panel5.Controls.Add(this.label9);
-            this.panel5.Location = new System.Drawing.Point(12, 119);
+            this.panel5.Location = new System.Drawing.Point(422, 36);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(266, 66);
             this.panel5.TabIndex = 19;
@@ -273,9 +282,9 @@
             // dgvVendas
             // 
             this.dgvVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVendas.Location = new System.Drawing.Point(422, 37);
+            this.dgvVendas.Location = new System.Drawing.Point(422, 119);
             this.dgvVendas.Name = "dgvVendas";
-            this.dgvVendas.Size = new System.Drawing.Size(596, 393);
+            this.dgvVendas.Size = new System.Drawing.Size(596, 311);
             this.dgvVendas.TabIndex = 15;
             // 
             // panel1
@@ -305,9 +314,80 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 30);
+            this.label1.Size = new System.Drawing.Size(89, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ID";
+            this.label1.Text = "ID Jogo";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(213)))), ((int)(((byte)(108)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(301, 149);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(46, 35);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.label2);
+            this.panel7.Location = new System.Drawing.Point(12, 119);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(266, 76);
+            this.panel7.TabIndex = 26;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(0, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(266, 35);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 30);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "ID Cliente";
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.calendario);
+            this.panel8.Controls.Add(this.label4);
+            this.panel8.Location = new System.Drawing.Point(12, 201);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(266, 202);
+            this.panel8.TabIndex = 28;
+            // 
+            // calendario
+            // 
+            this.calendario.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.calendario.Location = new System.Drawing.Point(0, 40);
+            this.calendario.Name = "calendario";
+            this.calendario.TabIndex = 29;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(176, 30);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Data de Retorno";
             // 
             // FrmLocacao
             // 
@@ -316,6 +396,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1030, 661);
             this.ControlBox = false;
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnAddProdutos);
             this.Controls.Add(this.btnCancelar);
@@ -346,6 +429,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -375,5 +462,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.MonthCalendar calendario;
     }
 }

@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classeArtigo.cs" />
+    <Compile Include="classeJogo.cs" />
     <Compile Include="FormSplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +168,11 @@
     <None Include="images\topGames_200_200.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\plus.bmp" />
+    <None Include="images\plus.png" />
+    <None Include="images\minus.png" />
+    <None Include="images\alert.png" />
+    <None Include="images\topGames_splash_screen_200_200.png" />
     <Content Include="topGames.ico" />
     <Content Include="topGamesDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

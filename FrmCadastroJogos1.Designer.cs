@@ -63,6 +63,7 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnApagar
             // 
@@ -72,6 +73,7 @@
             this.btnApagar.ForeColor = System.Drawing.Color.Black;
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.UseVisualStyleBackColor = false;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // btnAtualizar
             // 
@@ -81,6 +83,7 @@
             this.btnAtualizar.ForeColor = System.Drawing.Color.Black;
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnCadastrar
             // 
@@ -90,6 +93,7 @@
             this.btnCadastrar.ForeColor = System.Drawing.Color.Black;
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // txtId
             // 

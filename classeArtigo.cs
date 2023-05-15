@@ -27,7 +27,7 @@ namespace TOP_Games
             while (dr.Read())
             {
                 Artigo artigos = new Artigo();
-                artigos.id = (int)dr["clienteId"];
+                artigos.id = (int)dr["artigoId"];
                 artigos.nome = dr["nome"].ToString();
                 artigos.quantidade = dr["quantidade"].ToString();
                 artigos.precoVenda = dr["precoVenda"].ToString();
@@ -39,7 +39,8 @@ namespace TOP_Games
 
         public void Cadastrar(string nome, string quantidade, string precoVenda, string descricao)
         {
-            string sql = "INSERT INTO Artigos (nome, quantidade, precoVenda, descricao) VALUES ('"+nome+"', '"+quantidade+"', '"+precoVenda+"', '"+descricao+"')";
+            float preco = float.Parse(precoVenda);
+            string sql = "INSERT INTO Artigos (nome, quantidade, precoVenda, descricao) VALUES ('"+nome+"', '"+quantidade+"', '"+ preco+ "', '"+descricao+"')";
             con.Open();
             SqlCommand cadArtigo = new SqlCommand(sql, con);
             cadArtigo.ExecuteNonQuery();
@@ -57,7 +58,7 @@ namespace TOP_Games
 
         public void Apagar(int Id) 
         {
-            string sql = "DELETE FROM Artigos WHERE Id = '" + Id + "'";
+            string sql = "DELETE FROM Artigos WHERE artigoId = '" + Id + "'";
             con.Open();
             SqlCommand delArtigo = new SqlCommand(sql, con);
             delArtigo.ExecuteNonQuery();
