@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnOk = new System.Windows.Forms.Button();
+            this.btnOkJogo = new System.Windows.Forms.Button();
             this.btnAddProdutos = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnFinalizarCompra = new System.Windows.Forms.Button();
@@ -47,40 +47,45 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblSubtotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dgvVendas = new System.Windows.Forms.DataGridView();
+            this.dgvLocacao = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtIdJogo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOkCliente = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.calendario = new System.Windows.Forms.MonthCalendar();
+            this.txtDataRetorno = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLocacao)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnOk
+            // btnOkJogo
             // 
-            this.btnOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(213)))), ((int)(((byte)(108)))));
-            this.btnOk.FlatAppearance.BorderSize = 0;
-            this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOk.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.Location = new System.Drawing.Point(301, 67);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(46, 35);
-            this.btnOk.TabIndex = 25;
-            this.btnOk.Text = "OK";
-            this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOkJogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(213)))), ((int)(((byte)(108)))));
+            this.btnOkJogo.FlatAppearance.BorderSize = 0;
+            this.btnOkJogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOkJogo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOkJogo.Location = new System.Drawing.Point(301, 149);
+            this.btnOkJogo.Name = "btnOkJogo";
+            this.btnOkJogo.Size = new System.Drawing.Size(46, 35);
+            this.btnOkJogo.TabIndex = 25;
+            this.btnOkJogo.Text = "OK";
+            this.btnOkJogo.UseVisualStyleBackColor = false;
+            this.btnOkJogo.Click += new System.EventHandler(this.btnOkJogo_Click);
             // 
             // btnAddProdutos
             // 
@@ -92,8 +97,9 @@
             this.btnAddProdutos.Name = "btnAddProdutos";
             this.btnAddProdutos.Size = new System.Drawing.Size(116, 67);
             this.btnAddProdutos.TabIndex = 24;
-            this.btnAddProdutos.Text = "Adicionar Produtos";
+            this.btnAddProdutos.Text = "Adicionar Produto";
             this.btnAddProdutos.UseVisualStyleBackColor = false;
+            this.btnAddProdutos.Click += new System.EventHandler(this.btnAddProdutos_Click);
             // 
             // btnCancelar
             // 
@@ -125,7 +131,7 @@
             // 
             this.panel6.Controls.Add(this.lblPlataforma);
             this.panel6.Controls.Add(this.label11);
-            this.panel6.Location = new System.Drawing.Point(694, 36);
+            this.panel6.Location = new System.Drawing.Point(648, 47);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(266, 66);
             this.panel6.TabIndex = 20;
@@ -135,11 +141,10 @@
             this.lblPlataforma.AutoSize = true;
             this.lblPlataforma.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblPlataforma.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblPlataforma.Location = new System.Drawing.Point(71, 30);
+            this.lblPlataforma.Location = new System.Drawing.Point(266, 30);
             this.lblPlataforma.Name = "lblPlataforma";
-            this.lblPlataforma.Size = new System.Drawing.Size(195, 30);
+            this.lblPlataforma.Size = new System.Drawing.Size(0, 30);
             this.lblPlataforma.TabIndex = 1;
-            this.lblPlataforma.Text = "sdfsdfsdfsfsfsfsdf";
             this.lblPlataforma.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // label11
@@ -157,7 +162,7 @@
             // 
             this.panel5.Controls.Add(this.lblJogo);
             this.panel5.Controls.Add(this.label9);
-            this.panel5.Location = new System.Drawing.Point(422, 36);
+            this.panel5.Location = new System.Drawing.Point(376, 47);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(266, 66);
             this.panel5.TabIndex = 19;
@@ -167,11 +172,10 @@
             this.lblJogo.AutoSize = true;
             this.lblJogo.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblJogo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblJogo.Location = new System.Drawing.Point(71, 30);
+            this.lblJogo.Location = new System.Drawing.Point(266, 30);
             this.lblJogo.Name = "lblJogo";
-            this.lblJogo.Size = new System.Drawing.Size(195, 30);
+            this.lblJogo.Size = new System.Drawing.Size(0, 30);
             this.lblJogo.TabIndex = 1;
-            this.lblJogo.Text = "sdfsdfsdfsfsfsfsdf";
             this.lblJogo.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // label9
@@ -279,33 +283,33 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "SUBTOTAL";
             // 
-            // dgvVendas
+            // dgvLocacao
             // 
-            this.dgvVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVendas.Location = new System.Drawing.Point(422, 119);
-            this.dgvVendas.Name = "dgvVendas";
-            this.dgvVendas.Size = new System.Drawing.Size(596, 311);
-            this.dgvVendas.TabIndex = 15;
+            this.dgvLocacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLocacao.Location = new System.Drawing.Point(422, 119);
+            this.dgvLocacao.Name = "dgvLocacao";
+            this.dgvLocacao.Size = new System.Drawing.Size(596, 311);
+            this.dgvLocacao.TabIndex = 15;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtId);
+            this.panel1.Controls.Add(this.txtIdJogo);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 37);
+            this.panel1.Location = new System.Drawing.Point(12, 119);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(266, 76);
             this.panel1.TabIndex = 14;
             // 
-            // txtId
+            // txtIdJogo
             // 
-            this.txtId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtId.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(0, 30);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(266, 35);
-            this.txtId.TabIndex = 1;
+            this.txtIdJogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.txtIdJogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdJogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtIdJogo.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdJogo.Location = new System.Drawing.Point(0, 30);
+            this.txtIdJogo.Name = "txtIdJogo";
+            this.txtIdJogo.Size = new System.Drawing.Size(266, 35);
+            this.txtIdJogo.TabIndex = 1;
             // 
             // label1
             // 
@@ -318,38 +322,39 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID Jogo";
             // 
-            // button1
+            // btnOkCliente
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(213)))), ((int)(((byte)(108)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(301, 149);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 35);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnOkCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(213)))), ((int)(((byte)(108)))));
+            this.btnOkCliente.FlatAppearance.BorderSize = 0;
+            this.btnOkCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOkCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOkCliente.Location = new System.Drawing.Point(301, 231);
+            this.btnOkCliente.Name = "btnOkCliente";
+            this.btnOkCliente.Size = new System.Drawing.Size(46, 35);
+            this.btnOkCliente.TabIndex = 27;
+            this.btnOkCliente.Text = "OK";
+            this.btnOkCliente.UseVisualStyleBackColor = false;
+            this.btnOkCliente.Click += new System.EventHandler(this.btnOkCliente_Click);
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Controls.Add(this.txtIdCliente);
             this.panel7.Controls.Add(this.label2);
-            this.panel7.Location = new System.Drawing.Point(12, 119);
+            this.panel7.Location = new System.Drawing.Point(12, 201);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(266, 76);
             this.panel7.TabIndex = 26;
             // 
-            // textBox1
+            // txtIdCliente
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(0, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(266, 35);
-            this.textBox1.TabIndex = 1;
+            this.txtIdCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.txtIdCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtIdCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdCliente.Location = new System.Drawing.Point(0, 30);
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.Size = new System.Drawing.Size(266, 35);
+            this.txtIdCliente.TabIndex = 1;
             // 
             // label2
             // 
@@ -364,19 +369,23 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.calendario);
+            this.panel8.Controls.Add(this.txtDataRetorno);
             this.panel8.Controls.Add(this.label4);
-            this.panel8.Location = new System.Drawing.Point(12, 201);
+            this.panel8.Location = new System.Drawing.Point(12, 295);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(266, 202);
+            this.panel8.Size = new System.Drawing.Size(266, 76);
             this.panel8.TabIndex = 28;
             // 
-            // calendario
+            // txtDataRetorno
             // 
-            this.calendario.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.calendario.Location = new System.Drawing.Point(0, 40);
-            this.calendario.Name = "calendario";
-            this.calendario.TabIndex = 29;
+            this.txtDataRetorno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.txtDataRetorno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDataRetorno.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDataRetorno.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataRetorno.Location = new System.Drawing.Point(0, 30);
+            this.txtDataRetorno.Name = "txtDataRetorno";
+            this.txtDataRetorno.Size = new System.Drawing.Size(266, 35);
+            this.txtDataRetorno.TabIndex = 1;
             // 
             // label4
             // 
@@ -389,6 +398,38 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Data de Retorno";
             // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.lblCliente);
+            this.panel9.Controls.Add(this.label8);
+            this.panel9.Location = new System.Drawing.Point(104, 47);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(266, 66);
+            this.panel9.TabIndex = 29;
+            // 
+            // lblCliente
+            // 
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblCliente.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.lblCliente.Location = new System.Drawing.Point(71, 30);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(195, 30);
+            this.lblCliente.TabIndex = 1;
+            this.lblCliente.Text = "sdfsdfsdfsfsfsfsdf";
+            this.lblCliente.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 30);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "CLIENTE";
+            // 
             // FrmLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,10 +437,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1030, 661);
             this.ControlBox = false;
+            this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOkCliente);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.btnOkJogo);
             this.Controls.Add(this.btnAddProdutos);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnFinalizarCompra);
@@ -408,7 +450,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.dgvVendas);
+            this.Controls.Add(this.dgvLocacao);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -416,6 +458,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmLocacao";
             this.Text = "FrmLocacao";
+            this.Load += new System.EventHandler(this.FrmLocacao_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -426,20 +469,22 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLocacao)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.Button btnOkJogo;
         private System.Windows.Forms.Button btnAddProdutos;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnFinalizarCompra;
@@ -458,16 +503,19 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblSubtotal;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgvVendas;
+        private System.Windows.Forms.DataGridView dgvLocacao;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtIdJogo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOkCliente;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox txtDataRetorno;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MonthCalendar calendario;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.Label label8;
     }
 }

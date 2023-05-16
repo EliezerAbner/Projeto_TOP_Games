@@ -23,7 +23,7 @@ namespace TOP_Games
         public string bairro { get; set; }
         public string cidade { get; set; }
 
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\topGamesDB.mdf;Integrated Security=True");
 
         public List<Cliente> listaCliente()
         {
@@ -100,14 +100,15 @@ namespace TOP_Games
         {
 
         }
-        public void Buscar(int Id)
+        public void Buscar(int id)
         {
-            string sql = "SELECT * from Clientes WHERE clienteId='" + Id + "'";
+            string sql = "SELECT * from Clientes WHERE clienteId='" + id + "'";
             con.Open();
             SqlCommand buscaCliente = new SqlCommand(sql, con);
             SqlDataReader dr = buscaCliente.ExecuteReader();
             while (dr.Read())
             {
+                Id = Convert.ToInt16(dr["clienteId"]);
                 nome = dr["nome"].ToString();
                 dataNascimento = dr["dataNascimento"].ToString();
                 cpf = dr["cpf"].ToString();

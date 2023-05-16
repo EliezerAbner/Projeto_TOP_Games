@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="classeArtigo.cs" />
     <Compile Include="classeJogo.cs" />
+    <Compile Include="classeLocacao.cs" />
     <Compile Include="FormSplash.cs">
       <SubType>Form</SubType>
     </Compile>

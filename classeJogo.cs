@@ -18,7 +18,7 @@ namespace TOP_Games
         public string quantidade { get; set; }
         public string precoVenda { get; set; }
 
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\topGamesDB.mdf;Integrated Security=True");
 
         public List<Jogo> listaJogos()
         {
@@ -57,7 +57,7 @@ namespace TOP_Games
         public void Atualizar(int Id, string titulo, string plataforma, string genero, string desenvolvedora, string anoLancamento, string quantidade, string precoVenda)
         {
             float preco = float.Parse(precoVenda);
-            string sql = "UPDATE Jogos SET titulo='" + titulo + "', plataforma='" + plataforma + "', genero='" + genero + "', desenvolvedora='" + desenvolvedora + "', anoLancamento='" + anoLancamento + "', quantidade='" + quantidade + "', precoVenda='" + preco + "'";
+            string sql = "UPDATE Jogos SET titulo='" + titulo + "', plataforma='" + plataforma + "', genero='" + genero + "', desenvolvedora='" + desenvolvedora + "', anoLancamento='" + anoLancamento + "', quantidade='" + quantidade + "', precoVenda='" + preco + "' WHERE jogoId='"+Id+"'";
             con.Open();
             SqlCommand cmd = new SqlCommand (sql, con);
             cmd.ExecuteNonQuery();
