@@ -65,8 +65,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classeArtigo.cs" />
+    <Compile Include="classeConexao.cs" />
     <Compile Include="classeJogo.cs" />
     <Compile Include="classeLocacao.cs" />
+    <Compile Include="classePrecoLocacao.cs" />
     <Compile Include="FormSplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +99,12 @@
     <Compile Include="FrmLocacao.Designer.cs">
       <DependentUpon>FrmLocacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLocacaoPreco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLocacaoPreco.Designer.cs">
+      <DependentUpon>FrmLocacaoPreco.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLocacao.resx">
       <DependentUpon>FrmLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLocacaoPreco.resx">
+      <DependentUpon>FrmLocacaoPreco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
@@ -174,6 +185,12 @@
     <None Include="images\minus.png" />
     <None Include="images\alert.png" />
     <None Include="images\topGames_splash_screen_200_200.png" />
+    <None Include="images\settings.png" />
+    <None Include="images\power.png" />
+    <None Include="images\question.png" />
+    <None Include="images\power-modified.png" />
+    <None Include="images\question-modified.png" />
+    <None Include="images\settings-modified.png" />
     <Content Include="topGames.ico" />
     <Content Include="topGamesDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -136,4 +136,13 @@
   <data name="topGames_splash_screen_200_200" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\topGames_splash_screen_200_200.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="power_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\power-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="question_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\question-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_modified" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\images\settings-modified.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

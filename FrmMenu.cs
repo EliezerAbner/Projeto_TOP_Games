@@ -122,5 +122,16 @@ namespace TOP_Games
         {
 
         }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            FrmLocacaoPreco locacaoPreco = new FrmLocacaoPreco();
+            locacaoPreco.Show();
+        }
+
+        private void btnSairIcone_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

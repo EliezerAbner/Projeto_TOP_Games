@@ -12,6 +12,9 @@ namespace TOP_Games
 {
     public partial class FrmLocacao : Form
     {
+        
+        public double valorLocacao { get; set; }
+
         public FrmLocacao()
         {
             InitializeComponent();
@@ -23,6 +26,11 @@ namespace TOP_Games
             List<Locacao> listaLocacoes = locacoes.listaLocacao();
             dgvLocacao.DataSource = listaLocacoes;
             txtIdJogo.Focus();
+            PrecoLocacao preco = new PrecoLocacao();
+            preco.buscarPreco();
+            valorLocacao = preco.valorLocacao;
+
+
         }
 
         private void btnOkJogo_Click(object sender, EventArgs e)
@@ -87,6 +95,43 @@ namespace TOP_Games
             lblCliente.Text = "";
             lblJogo.Text = "";
             lblPlataforma.Text = "";
+
+            if(lblSubtotal.Text == "")
+            {
+                lblSubtotal.Text = 0.ToString();
+            }
+
+            
+            double precoTotal = Convert.ToDouble(lblSubtotal.Text) + valorLocacao;
+            lblSubtotal.Text = conversaoDecimal(precoTotal.ToString());
+            
+        }
+
+        private void btnFinalizarCompra_Click(object sender, EventArgs e)
+        {
+            
+            if(Convert.ToBoolean(txtTotalRecebido.Text == ""))
+            {
+                MessageBox.Show("Insira o total recebido!");
+            }
+            else
+            {
+                string valorConvertido = lblSubtotal.Text.Replace(',', '.');
+                double totalRecebido = Convert.ToDouble(valorConvertido);
+                double valorTotal = Convert.ToDouble(lblSubtotal.Text);
+
+                double total = totalRecebido - valorTotal;
+
+                lblTroco.Text = conversaoDecimal(total.ToString());
+
+            }
+        }
+
+        public string conversaoDecimal(string valorAntigo)
+        {
+            string valorNovo = valorAntigo.Replace('.', ',');
+
+            return valorNovo;
         }
     }
 }

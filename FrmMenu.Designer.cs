@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnSair = new System.Windows.Forms.Button();
             this.btnLocacao = new System.Windows.Forms.Button();
             this.btnVenda = new System.Windows.Forms.Button();
             this.panelCadastro = new System.Windows.Forms.Panel();
@@ -40,9 +39,10 @@
             this.btnCadastro = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSobre = new System.Windows.Forms.Button();
+            this.btnConfig = new System.Windows.Forms.Button();
+            this.btnSairIcone = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelCadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,7 +52,6 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(159)))));
-            this.panelMenu.Controls.Add(this.btnSair);
             this.panelMenu.Controls.Add(this.btnLocacao);
             this.panelMenu.Controls.Add(this.btnVenda);
             this.panelMenu.Controls.Add(this.panelCadastro);
@@ -60,15 +59,6 @@
             this.panelMenu.Controls.Add(this.pictureBox1);
             resources.ApplyResources(this.panelMenu, "panelMenu");
             this.panelMenu.Name = "panelMenu";
-            // 
-            // btnSair
-            // 
-            resources.ApplyResources(this.btnSair, "btnSair");
-            this.btnSair.FlatAppearance.BorderSize = 0;
-            this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Name = "btnSair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnLocacao
             // 
@@ -142,17 +132,38 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(159)))));
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnSobre);
+            this.panel2.Controls.Add(this.btnConfig);
+            this.panel2.Controls.Add(this.btnSairIcone);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // button1
+            // btnSobre
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSobre.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnSobre, "btnSobre");
+            this.btnSobre.Image = global::TOP_Games.Properties.Resources.question_modified;
+            this.btnSobre.Name = "btnSobre";
+            this.btnSobre.UseVisualStyleBackColor = true;
+            // 
+            // btnConfig
+            // 
+            this.btnConfig.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnConfig, "btnConfig");
+            this.btnConfig.Image = global::TOP_Games.Properties.Resources.settings_modified;
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.UseVisualStyleBackColor = true;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
+            // 
+            // btnSairIcone
+            // 
+            this.btnSairIcone.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnSairIcone, "btnSairIcone");
+            this.btnSairIcone.Image = global::TOP_Games.Properties.Resources.power_modified;
+            this.btnSairIcone.Name = "btnSairIcone";
+            this.btnSairIcone.UseVisualStyleBackColor = true;
+            this.btnSairIcone.Click += new System.EventHandler(this.btnSairIcone_Click);
             // 
             // panel1
             // 
@@ -161,12 +172,6 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // button2
-            // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmMenu
             // 
@@ -198,10 +203,10 @@
         private System.Windows.Forms.Button btnCadastroJogos;
         private System.Windows.Forms.Button btnCadastroClientes;
         private System.Windows.Forms.Button btnCadastro;
-        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCadastroArtigos;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSairIcone;
+        private System.Windows.Forms.Button btnConfig;
+        private System.Windows.Forms.Button btnSobre;
     }
 }
