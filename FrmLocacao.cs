@@ -14,6 +14,8 @@ namespace TOP_Games
     {
         
         public double valorLocacao { get; set; }
+        public string dataLocacao { get; set; }
+        public double total { get; set; }
 
         public FrmLocacao()
         {
@@ -22,13 +24,14 @@ namespace TOP_Games
 
         private void FrmLocacao_Load(object sender, EventArgs e)
         {
-            Locacao locacoes = new Locacao();
-            List<Locacao> listaLocacoes = locacoes.listaLocacao();
-            dgvLocacao.DataSource = listaLocacoes;
+            //Locacao locacoes = new Locacao();
+            //List<Locacao> listaLocacoes = locacoes.listaLocacao();
+            //dgvLocacao.DataSource = listaLocacoes;
             txtIdJogo.Focus();
             PrecoLocacao preco = new PrecoLocacao();
             preco.buscarPreco();
             valorLocacao = preco.valorLocacao;
+            total = 0;
 
 
         }
@@ -64,7 +67,6 @@ namespace TOP_Games
 
             if (Convert.ToBoolean(okCliente.Id))
             {
-                MessageBox.Show("Cliente encontrado!");
                 lblCliente.Text = okCliente.nome;
             }
             else
@@ -77,7 +79,7 @@ namespace TOP_Games
 
         private void btnAddProdutos_Click(object sender, EventArgs e)
         {
-            string dataLocacao = DateTime.Now.ToString();
+            dataLocacao = DateTime.Now.ToString();
             int idJogo = int.Parse(txtIdJogo.Text);
             int idCliente = int.Parse(txtIdCliente.Text);
             Locacao addProduto = new Locacao();
@@ -85,25 +87,26 @@ namespace TOP_Games
             addProduto.adicionarLocacao(dataLocacao, txtDataRetorno.Text, idJogo, idCliente);
 
             Locacao locacoes = new Locacao();
-            List<Locacao> listaLocacoes = locacoes.listaLocacao();
+            dataLocacao = DateTime.Now.ToString();
+            List<Locacao> listaLocacoes = locacoes.listaLocacao(int.Parse(txtIdCliente.Text), dataLocacao);
             dgvLocacao.DataSource = listaLocacoes;
             txtIdJogo.Focus();
 
-            txtIdCliente.Text = "";
             txtIdJogo.Text = "";
             txtDataRetorno.Text = "";
-            lblCliente.Text = "";
             lblJogo.Text = "";
             lblPlataforma.Text = "";
 
-            if(lblSubtotal.Text == "")
+            if (lblSubtotal.Text == "")
             {
-                lblSubtotal.Text = 0.ToString();
+                total = valorLocacao;
+                lblSubtotal.Text = conversaoDecimal(Convert.ToString(total));
             }
-
-            
-            double precoTotal = Convert.ToDouble(lblSubtotal.Text) + valorLocacao;
-            lblSubtotal.Text = conversaoDecimal(precoTotal.ToString());
+            else
+            {
+                total+= total;
+                lblSubtotal.Text = conversaoDecimal(Convert.ToString(total));
+            }
             
         }
 
@@ -116,22 +119,48 @@ namespace TOP_Games
             }
             else
             {
+                //consertar aq
                 string valorConvertido = lblSubtotal.Text.Replace(',', '.');
                 double totalRecebido = Convert.ToDouble(valorConvertido);
                 double valorTotal = Convert.ToDouble(lblSubtotal.Text);
 
                 double total = totalRecebido - valorTotal;
 
-                lblTroco.Text = conversaoDecimal(total.ToString());
+                lblTroco.Text = pastorSistemaMetrico(total.ToString());
 
             }
         }
 
-        public string conversaoDecimal(string valorAntigo)
+        public string pastorSistemaMetrico(string valorAntigo)
         {
             string valorNovo = valorAntigo.Replace('.', ',');
 
             return valorNovo;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            dataLocacao = DateTime.Now.ToString();
+            var resposta = MessageBox.Show("Deseja cancelar locação?", "Cancelar locação", MessageBoxButtons.YesNo);
+
+            if(resposta == DialogResult.Yes)
+            {
+                Locacao apagarLocacao = new Locacao();
+                dataLocacao = DateTime.Now.ToString();
+                apagarLocacao.excluirLocacao(int.Parse(txtIdCliente.Text), Convert.ToString(dataLocacao));
+                Locacao locacoes = new Locacao();
+                List<Locacao> listaLocacoes = locacoes.listaLocacao(int.Parse(txtIdCliente.Text),dataLocacao);
+                dgvLocacao.DataSource = listaLocacoes;
+
+                txtIdCliente.Text = "";
+                txtIdJogo.Text = "";
+                lblSubtotal.Text = "";
+                lblCliente.Text = "";
+                lblJogo.Text = "";
+                total = 0;
+            }
+
+            
         }
     }
 }

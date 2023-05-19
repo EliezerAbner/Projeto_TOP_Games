@@ -39,12 +39,15 @@
             this.lblJogo = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtTotalRecebido = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblTroco = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvLocacao = new System.Windows.Forms.DataGridView();
@@ -61,9 +64,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.lblCliente = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -100,7 +100,7 @@
             this.btnAddProdutos.Name = "btnAddProdutos";
             this.btnAddProdutos.Size = new System.Drawing.Size(116, 67);
             this.btnAddProdutos.TabIndex = 24;
-            this.btnAddProdutos.Text = "Adicionar Produto";
+            this.btnAddProdutos.Text = "Adicionar Locação";
             this.btnAddProdutos.UseVisualStyleBackColor = false;
             this.btnAddProdutos.Click += new System.EventHandler(this.btnAddProdutos_Click);
             // 
@@ -116,6 +116,7 @@
             this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnFinalizarCompra
             // 
@@ -203,6 +204,17 @@
             this.panel4.Size = new System.Drawing.Size(280, 66);
             this.panel4.TabIndex = 18;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(0, 30);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 30);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "R$";
+            // 
             // txtTotalRecebido
             // 
             this.txtTotalRecebido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
@@ -234,6 +246,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(280, 66);
             this.panel2.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(0, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 30);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "R$";
             // 
             // lblTroco
             // 
@@ -267,6 +290,17 @@
             this.panel3.Size = new System.Drawing.Size(596, 67);
             this.panel3.TabIndex = 16;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(0, 30);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(39, 30);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "R$";
+            // 
             // lblSubtotal
             // 
             this.lblSubtotal.AutoSize = true;
@@ -284,9 +318,9 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 30);
+            this.label3.Size = new System.Drawing.Size(76, 30);
             this.label3.TabIndex = 0;
-            this.label3.Text = "SUBTOTAL";
+            this.label3.Text = "TOTAL";
             // 
             // dgvLocacao
             // 
@@ -433,39 +467,6 @@
             this.label8.Size = new System.Drawing.Size(95, 30);
             this.label8.TabIndex = 0;
             this.label8.Text = "CLIENTE";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(0, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 30);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "R$";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(0, 30);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 30);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "R$";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(0, 30);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(39, 30);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "R$";
             // 
             // FrmLocacao
             // 

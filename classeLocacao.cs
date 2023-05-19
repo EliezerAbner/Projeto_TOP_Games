@@ -18,10 +18,10 @@ namespace TOP_Games
 
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
 
-        public List<Locacao> listaLocacao()
+        public List<Locacao> listaLocacao(int Id, string diaLocacao)
         {
             List<Locacao> li = new List<Locacao>();
-            string sql = "SELECT * FROM Locacao";
+            string sql = "SELECT * FROM Locacao WHERE clienteId='"+Id+"' AND dataLocacao='"+diaLocacao+"'";
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader dataReader = cmd.ExecuteReader();
@@ -48,9 +48,9 @@ namespace TOP_Games
             con.Close();
         }
 
-        public void excluirLocacao(int locacaoId)
+        public void excluirLocacao(int clienteId, string dataLocacao)
         {
-            string sql = "DELETE FROM Locacao WHERE locacaoId='" + locacaoId + "'";
+            string sql = "DELETE FROM Locacao WHERE clienteId='" + clienteId + "' AND dataLocacao='"+dataLocacao+"'";
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.ExecuteNonQuery();
