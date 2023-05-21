@@ -13,7 +13,7 @@ namespace TOP_Games
     {
         public double valorLocacao { get; set; }
 
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\EliezerAbner\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
 
         public void cadastrarPreco(double valor)
         {

@@ -99,6 +99,18 @@
     <Compile Include="FrmLocacao.Designer.cs">
       <DependentUpon>FrmLocacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLocacaoControle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLocacaoControle.Designer.cs">
+      <DependentUpon>FrmLocacaoControle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLocacaoDevolucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLocacaoDevolucao.Designer.cs">
+      <DependentUpon>FrmLocacaoDevolucao.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLocacaoPreco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLocacao.resx">
       <DependentUpon>FrmLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLocacaoControle.resx">
+      <DependentUpon>FrmLocacaoControle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLocacaoDevolucao.resx">
+      <DependentUpon>FrmLocacaoDevolucao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLocacaoPreco.resx">
       <DependentUpon>FrmLocacaoPreco.cs</DependentUpon>

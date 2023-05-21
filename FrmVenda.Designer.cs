@@ -136,6 +136,7 @@
             this.btnSubtrair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(131)))), ((int)(((byte)(121)))));
             this.btnSubtrair.FlatAppearance.BorderSize = 0;
             this.btnSubtrair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubtrair.Image = global::TOP_Games.Properties.Resources.minus;
             this.btnSubtrair.Location = new System.Drawing.Point(54, 63);
             this.btnSubtrair.Name = "btnSubtrair";
             this.btnSubtrair.Size = new System.Drawing.Size(43, 40);
@@ -160,6 +161,7 @@
             this.btnAdicionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(131)))), ((int)(((byte)(121)))));
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionar.Image = global::TOP_Games.Properties.Resources.plus;
             this.btnAdicionar.Location = new System.Drawing.Point(5, 63);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(43, 40);

@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;btnLocacao.Name" xml:space="preserve">
-    <value>btnLocacao</value>
-  </data>
-  <data name="&gt;&gt;btnLocacao.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnLocacao.Parent" xml:space="preserve">
-    <value>panelMenu</value>
-  </data>
-  <data name="&gt;&gt;btnLocacao.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;btnVenda.Name" xml:space="preserve">
     <value>btnVenda</value>
   </data>
@@ -139,7 +127,31 @@
     <value>panelMenu</value>
   </data>
   <data name="&gt;&gt;btnVenda.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelLocacao.Name" xml:space="preserve">
+    <value>panelLocacao</value>
+  </data>
+  <data name="&gt;&gt;panelLocacao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelLocacao.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;panelLocacao.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnLocacao.Name" xml:space="preserve">
+    <value>btnLocacao</value>
+  </data>
+  <data name="&gt;&gt;btnLocacao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLocacao.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;btnLocacao.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;panelCadastro.Name" xml:space="preserve">
     <value>panelCadastro</value>
@@ -151,7 +163,7 @@
     <value>panelMenu</value>
   </data>
   <data name="&gt;&gt;panelCadastro.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;btnCadastro.Name" xml:space="preserve">
     <value>btnCadastro</value>
@@ -163,7 +175,7 @@
     <value>panelMenu</value>
   </data>
   <data name="&gt;&gt;btnCadastro.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
     <value>pictureBox1</value>
@@ -175,7 +187,7 @@
     <value>panelMenu</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panelMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -207,51 +219,6 @@
   <data name="&gt;&gt;panelMenu.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="btnLocacao.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="btnLocacao.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnLocacao.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt, style=Bold</value>
-  </data>
-  <data name="btnLocacao.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnLocacao.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 364</value>
-  </data>
-  <data name="btnLocacao.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="btnLocacao.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 0, 0</value>
-  </data>
-  <data name="btnLocacao.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 45</value>
-  </data>
-  <data name="btnLocacao.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnLocacao.Text" xml:space="preserve">
-    <value>Locação</value>
-  </data>
-  <data name="btnLocacao.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;btnLocacao.Name" xml:space="preserve">
-    <value>btnLocacao</value>
-  </data>
-  <data name="&gt;&gt;btnLocacao.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnLocacao.Parent" xml:space="preserve">
-    <value>panelMenu</value>
-  </data>
-  <data name="&gt;&gt;btnLocacao.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="btnVenda.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -265,7 +232,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnVenda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 319</value>
+    <value>0, 459</value>
   </data>
   <data name="btnVenda.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -295,7 +262,247 @@
     <value>panelMenu</value>
   </data>
   <data name="&gt;&gt;btnVenda.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnControleMultas.Name" xml:space="preserve">
+    <value>btnControleMultas</value>
+  </data>
+  <data name="&gt;&gt;btnControleMultas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnControleMultas.Parent" xml:space="preserve">
+    <value>panelLocacao</value>
+  </data>
+  <data name="&gt;&gt;btnControleMultas.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnDevolucao.Name" xml:space="preserve">
+    <value>btnDevolucao</value>
+  </data>
+  <data name="&gt;&gt;btnDevolucao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDevolucao.Parent" xml:space="preserve">
+    <value>panelLocacao</value>
+  </data>
+  <data name="&gt;&gt;btnDevolucao.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnRealizarLocacao.Name" xml:space="preserve">
+    <value>btnRealizarLocacao</value>
+  </data>
+  <data name="&gt;&gt;btnRealizarLocacao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRealizarLocacao.Parent" xml:space="preserve">
+    <value>panelLocacao</value>
+  </data>
+  <data name="&gt;&gt;btnRealizarLocacao.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelLocacao.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelLocacao.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 364</value>
+  </data>
+  <data name="panelLocacao.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 95</value>
+  </data>
+  <data name="panelLocacao.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panelLocacao.Name" xml:space="preserve">
+    <value>panelLocacao</value>
+  </data>
+  <data name="&gt;&gt;panelLocacao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelLocacao.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;panelLocacao.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnControleMultas.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnControleMultas.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnControleMultas.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnControleMultas.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnControleMultas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 64</value>
+  </data>
+  <data name="btnControleMultas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btnControleMultas.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="btnControleMultas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 32</value>
+  </data>
+  <data name="btnControleMultas.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnControleMultas.Text" xml:space="preserve">
+    <value>Controle de Multas</value>
+  </data>
+  <data name="btnControleMultas.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnControleMultas.Name" xml:space="preserve">
+    <value>btnControleMultas</value>
+  </data>
+  <data name="&gt;&gt;btnControleMultas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnControleMultas.Parent" xml:space="preserve">
+    <value>panelLocacao</value>
+  </data>
+  <data name="&gt;&gt;btnControleMultas.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnDevolucao.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnDevolucao.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnDevolucao.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnDevolucao.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDevolucao.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 32</value>
+  </data>
+  <data name="btnDevolucao.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btnDevolucao.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="btnDevolucao.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 32</value>
+  </data>
+  <data name="btnDevolucao.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnDevolucao.Text" xml:space="preserve">
+    <value>Devoluções</value>
+  </data>
+  <data name="btnDevolucao.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnDevolucao.Name" xml:space="preserve">
+    <value>btnDevolucao</value>
+  </data>
+  <data name="&gt;&gt;btnDevolucao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDevolucao.Parent" xml:space="preserve">
+    <value>panelLocacao</value>
+  </data>
+  <data name="&gt;&gt;btnDevolucao.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnRealizarLocacao.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnRealizarLocacao.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnRealizarLocacao.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnRealizarLocacao.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnRealizarLocacao.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnRealizarLocacao.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btnRealizarLocacao.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>22, 0, 0, 0</value>
+  </data>
+  <data name="btnRealizarLocacao.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 32</value>
+  </data>
+  <data name="btnRealizarLocacao.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnRealizarLocacao.Text" xml:space="preserve">
+    <value>Reallizar Locação</value>
+  </data>
+  <data name="btnRealizarLocacao.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnRealizarLocacao.Name" xml:space="preserve">
+    <value>btnRealizarLocacao</value>
+  </data>
+  <data name="&gt;&gt;btnRealizarLocacao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRealizarLocacao.Parent" xml:space="preserve">
+    <value>panelLocacao</value>
+  </data>
+  <data name="&gt;&gt;btnRealizarLocacao.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnLocacao.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnLocacao.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnLocacao.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="btnLocacao.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnLocacao.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 319</value>
+  </data>
+  <data name="btnLocacao.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btnLocacao.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 0, 0</value>
+  </data>
+  <data name="btnLocacao.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 45</value>
+  </data>
+  <data name="btnLocacao.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnLocacao.Text" xml:space="preserve">
+    <value>Locação</value>
+  </data>
+  <data name="btnLocacao.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;btnLocacao.Name" xml:space="preserve">
+    <value>btnLocacao</value>
+  </data>
+  <data name="&gt;&gt;btnLocacao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLocacao.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;btnLocacao.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;btnCadastroJogos.Name" xml:space="preserve">
     <value>btnCadastroJogos</value>
@@ -361,7 +568,7 @@
     <value>panelMenu</value>
   </data>
   <data name="&gt;&gt;panelCadastro.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnCadastroJogos.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -541,7 +748,7 @@
     <value>panelMenu</value>
   </data>
   <data name="&gt;&gt;btnCadastro.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="pictureBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -574,34 +781,10 @@
     <value>panelMenu</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
-  <data name="btnSobre.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnSobre.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnSobre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>928, -1</value>
-  </data>
-  <data name="btnSobre.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 36</value>
-  </data>
-  <data name="btnSobre.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnSobre.Name" xml:space="preserve">
-    <value>btnSobre</value>
-  </data>
-  <data name="&gt;&gt;btnSobre.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSobre.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;btnSobre.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="btnConfig.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="btnConfig.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -610,10 +793,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnConfig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>880, -1</value>
+    <value>904, 0</value>
   </data>
   <data name="btnConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 36</value>
+    <value>42, 35</value>
   </data>
   <data name="btnConfig.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -628,7 +811,40 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;btnConfig.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSobre.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="btnSobre.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnSobre.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSobre.Location" type="System.Drawing.Point, System.Drawing">
+    <value>946, 0</value>
+  </data>
+  <data name="btnSobre.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 35</value>
+  </data>
+  <data name="btnSobre.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnSobre.Name" xml:space="preserve">
+    <value>btnSobre</value>
+  </data>
+  <data name="&gt;&gt;btnSobre.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSobre.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;btnSobre.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnSairIcone.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="btnSairIcone.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -637,10 +853,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnSairIcone.Location" type="System.Drawing.Point, System.Drawing">
-    <value>976, 0</value>
+    <value>988, 0</value>
   </data>
   <data name="btnSairIcone.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 36</value>
+    <value>42, 35</value>
   </data>
   <data name="btnSairIcone.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

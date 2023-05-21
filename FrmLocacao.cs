@@ -78,13 +78,14 @@ namespace TOP_Games
         {
             if(verificaVazio(txtIdCliente.Text, txtIdJogo.Text, txtDataRetorno.Text))
             {
+                Jogo AddNoCarrinho = new Jogo();
+                AddNoCarrinho.Quantidade(int.Parse(txtIdJogo.Text), 1, false);
+
                 dataLocacao = DateTime.Now.ToString();
                 int idJogo = int.Parse(txtIdJogo.Text);
                 int idCliente = int.Parse(txtIdCliente.Text);
                 string dataRetorno = txtDataRetorno.Text;
-                dataRetorno = td.To
                 Locacao addProduto = new Locacao();
-
                 addProduto.adicionarLocacao(dataLocacao, dataRetorno, idJogo, idCliente);
 
                 Locacao locacoes = new Locacao();
@@ -92,7 +93,6 @@ namespace TOP_Games
                 List<Locacao> listaLocacoes = locacoes.listaLocacao(int.Parse(txtIdCliente.Text), dataLocacao);
                 dgvLocacao.DataSource = listaLocacoes;
                 txtIdJogo.Focus();
-
                 txtIdJogo.Text = "";
                 txtDataRetorno.Text = "";
                 lblJogo.Text = "";
@@ -139,9 +139,12 @@ namespace TOP_Games
 
             if(resposta == DialogResult.Yes)
             {
+                Jogo devolver = new Jogo();
+                devolver.Quantidade(int.Parse(txtIdJogo.Text), 1, true);
+
                 Locacao apagarLocacao = new Locacao();
                 dataLocacao = DateTime.Now.ToString();
-                apagarLocacao.excluirLocacao(int.Parse(txtIdCliente.Text), Convert.ToString(dataLocacao));
+                apagarLocacao.excluirLocacao(int.Parse(txtIdCliente.Text), int.Parse(txtIdJogo.Text), Convert.ToString(dataLocacao));
                 Locacao locacoes = new Locacao();
                 List<Locacao> listaLocacoes = locacoes.listaLocacao(int.Parse(txtIdCliente.Text),dataLocacao);
                 dgvLocacao.DataSource = listaLocacoes;

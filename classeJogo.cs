@@ -18,7 +18,7 @@ namespace TOP_Games
         public string quantidade { get; set; }
         public string precoVenda { get; set; }
 
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\EliezerAbner\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
 
         public List<Jogo> listaJogos()
         {
@@ -90,6 +90,29 @@ namespace TOP_Games
                 quantidade = dataReader["quantidade"].ToString();
                 precoVenda = dataReader["precoVenda"].ToString();
             }
+            con.Close();
+        }
+
+        public void Quantidade(int Id, int carrinho, bool addSub) //addSub true = adiciona, addSub false = subtrai
+        {
+            Jogo buscar = new Jogo();
+            buscar.Buscar(Id);
+            int qtdeEstoque = int.Parse(buscar.quantidade);
+            int qtde;
+
+            if (addSub)
+            {
+                qtde = qtdeEstoque + carrinho;
+            }
+            else
+            {
+                qtde = qtdeEstoque - carrinho;
+            }
+
+            string sql = "UPDATE Jogos SET quantidade='" + qtde + "' WHERE jogoId='" + Id + "'";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.ExecuteNonQuery();
             con.Close();
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace TOP_Games
         public int jogoId { get; set; }
         public int clienteId { get; set; }
 
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\EliezerAbner\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
 
         public List<Locacao> listaLocacao(int Id, string diaLocacao)
         {
@@ -48,12 +49,29 @@ namespace TOP_Games
             con.Close();
         }
 
-        public void excluirLocacao(int clienteId, string dataLocacao)
+        public void excluirLocacao(int clienteId, int jogoId, string dataLocacao)
         {
-            string sql = "DELETE FROM Locacao WHERE clienteId='" + clienteId + "' AND dataLocacao='"+dataLocacao+"'";
+            string sql = "DELETE FROM Locacao WHERE clienteId='" + clienteId + "' AND dataLocacao='"+dataLocacao+"' AND jogoId='"+jogoId+"'";
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public void buscarLocacao(int clienteId, int jogoId)
+        {
+            string sql = "SELECT * FROM Locacao WHERE clienteId='"+clienteId+"' AND jogoId='"+jogoId+"'";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            while (dataReader.Read())
+            {
+                locacaoId = (int)dataReader["locacaoId"];
+                dataLocacao = dataReader["dataLocacao"].ToString();
+                dataRetorno = dataReader["dataRetorno"].ToString();
+                clienteId = (int)dataReader["clienteId"];
+                jogoId = (int)dataReader["jogoId"];
+            }
             con.Close();
         }
     }

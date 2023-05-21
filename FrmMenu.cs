@@ -22,7 +22,8 @@ namespace TOP_Games
             Thread.Sleep(3000);
             abertura.Close();
 
-            cadastroSubmenuDesign();
+            cadastroSubmenuDesign(panelCadastro);
+            cadastroSubmenuDesign(panelLocacao);
         }
 
         private void FrmMenu_Load(object sender, EventArgs e)
@@ -30,30 +31,37 @@ namespace TOP_Games
 
         }
 
-        private void cadastroSubmenuDesign() //o programa abrirá com o submenu fechado
+        private void cadastroSubmenuDesign(Panel panel) //o programa abrirá com o submenu fechado
         {
-            panelCadastro.Visible = false;  
+            panel.Visible = false;
 
         }
 
-        private void esconderCadastroSubmenu() // quando clicar em outros botões do painel lateral, o submenu será fechado 
+        private void esconderCadastroSubmenu(Panel panel) // quando clicar em outros botões do painel lateral, o submenu será fechado 
         {
-            if (panelCadastro.Visible == true) 
+            if (panel.Visible == true) 
             {
-            panelCadastro.Visible = false;
+                panel.Visible = false;
             }
         }
 
-        private void mostrarCadastroSubmenu() //quando clicar em cadastro, o submenu abrirá
+        private void mostrarCadastroSubmenu(Panel panel) //quando clicar em cadastro, o submenu abrirá
         {
-            if(panelCadastro.Visible == false) 
+            if(panel.Visible == false) 
             {
-                panelCadastro.Visible = true;
+                panel.Visible = true;
             }
             else
             {
-                panelCadastro.Visible=false;
+                panel.Visible=false;
             }
+        }
+
+        //PAINEL CADASTRO
+        private void btnCadastro_Click(object sender, EventArgs e)
+        {
+            mostrarCadastroSubmenu(panelCadastro);
+            esconderCadastroSubmenu(panelLocacao);
         }
 
         private void btnCadastroClientes_Click(object sender, EventArgs e)
@@ -83,9 +91,42 @@ namespace TOP_Games
             cadastroJogos.Show();
         }
 
+        //PAINEL LOCAÇÃO
+        private void btnLocacao_Click(object sender, EventArgs e)
+        {
+            mostrarCadastroSubmenu(panelLocacao);
+            esconderCadastroSubmenu(panelCadastro);
+        }
+
+        private void btnRealizarLocacao_Click(object sender, EventArgs e)
+        {
+            esconderCadastroSubmenu(panelCadastro);
+            panel1.Controls.Clear();
+            FrmLocacao locacao = new FrmLocacao();
+            locacao.TopLevel = false;
+            panel1.Controls.Add(locacao);
+            locacao.Show();
+        }
+
+        private void btnDevolucao_Click(object sender, EventArgs e)
+        {
+            FrmLocacaoDevolucao devolucao = new FrmLocacaoDevolucao();
+            devolucao.Show();
+        }
+
+        private void btnControleMultas_Click(object sender, EventArgs e)
+        {
+            FrmLocacaoControle controle = new FrmLocacaoControle();
+            panel1.Controls.Clear();
+            controle.TopLevel = false;
+            panel1.Controls.Add(controle);
+            controle.Show();
+        }
+
         private void btnVenda_Click(object sender, EventArgs e)
         {
-            esconderCadastroSubmenu();
+            esconderCadastroSubmenu(panelCadastro);
+            esconderCadastroSubmenu(panelLocacao);
             panel1.Controls.Clear();
             FrmVenda venda = new FrmVenda();
             venda.TopLevel = false;
@@ -93,24 +134,21 @@ namespace TOP_Games
             venda.Show();
         }
 
-        private void btnLocacao_Click(object sender, EventArgs e)
+        //PAINEL SUPERIOR
+        private void btnConfig_Click(object sender, EventArgs e)
         {
-            esconderCadastroSubmenu();
-            panel1.Controls.Clear();
-            FrmLocacao locacao = new FrmLocacao();
-            locacao.TopLevel = false;
-            panel1.Controls.Add(locacao);
-            locacao.Show(); 
+            FrmLocacaoPreco locacaoPreco = new FrmLocacaoPreco();
+            locacaoPreco.Show();
+        }
+
+        private void btnSairIcone_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void btnCadastro_Click(object sender, EventArgs e)
-        {
-            mostrarCadastroSubmenu();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -121,17 +159,6 @@ namespace TOP_Games
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void btnConfig_Click(object sender, EventArgs e)
-        {
-            FrmLocacaoPreco locacaoPreco = new FrmLocacaoPreco();
-            locacaoPreco.Show();
-        }
-
-        private void btnSairIcone_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
