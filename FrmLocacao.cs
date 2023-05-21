@@ -24,9 +24,6 @@ namespace TOP_Games
 
         private void FrmLocacao_Load(object sender, EventArgs e)
         {
-            //Locacao locacoes = new Locacao();
-            //List<Locacao> listaLocacoes = locacoes.listaLocacao();
-            //dgvLocacao.DataSource = listaLocacoes;
             txtIdJogo.Focus();
             PrecoLocacao preco = new PrecoLocacao();
             preco.buscarPreco();
@@ -79,35 +76,39 @@ namespace TOP_Games
 
         private void btnAddProdutos_Click(object sender, EventArgs e)
         {
-            dataLocacao = DateTime.Now.ToString();
-            int idJogo = int.Parse(txtIdJogo.Text);
-            int idCliente = int.Parse(txtIdCliente.Text);
-            Locacao addProduto = new Locacao();
-
-            addProduto.adicionarLocacao(dataLocacao, txtDataRetorno.Text, idJogo, idCliente);
-
-            Locacao locacoes = new Locacao();
-            dataLocacao = DateTime.Now.ToString();
-            List<Locacao> listaLocacoes = locacoes.listaLocacao(int.Parse(txtIdCliente.Text), dataLocacao);
-            dgvLocacao.DataSource = listaLocacoes;
-            txtIdJogo.Focus();
-
-            txtIdJogo.Text = "";
-            txtDataRetorno.Text = "";
-            lblJogo.Text = "";
-            lblPlataforma.Text = "";
-
-            if (lblSubtotal.Text == "")
+            if(verificaVazio(txtIdCliente.Text, txtIdJogo.Text, txtDataRetorno.Text))
             {
-                total = valorLocacao;
-                lblSubtotal.Text = conversaoDecimal(Convert.ToString(total));
+                dataLocacao = DateTime.Now.ToString();
+                int idJogo = int.Parse(txtIdJogo.Text);
+                int idCliente = int.Parse(txtIdCliente.Text);
+                string dataRetorno = txtDataRetorno.Text;
+                dataRetorno = td.To
+                Locacao addProduto = new Locacao();
+
+                addProduto.adicionarLocacao(dataLocacao, dataRetorno, idJogo, idCliente);
+
+                Locacao locacoes = new Locacao();
+                dataLocacao = DateTime.Now.ToString();
+                List<Locacao> listaLocacoes = locacoes.listaLocacao(int.Parse(txtIdCliente.Text), dataLocacao);
+                dgvLocacao.DataSource = listaLocacoes;
+                txtIdJogo.Focus();
+
+                txtIdJogo.Text = "";
+                txtDataRetorno.Text = "";
+                lblJogo.Text = "";
+                lblPlataforma.Text = "";
+
+                if (lblSubtotal.Text == "")
+                {
+                    total = valorLocacao;
+                    lblSubtotal.Text = pastorSistemaMetrico(Convert.ToString(total));
+                }
+                else
+                {
+                    total += total;
+                    lblSubtotal.Text = pastorSistemaMetrico(Convert.ToString(total));
+                }
             }
-            else
-            {
-                total+= total;
-                lblSubtotal.Text = conversaoDecimal(Convert.ToString(total));
-            }
-            
         }
 
         private void btnFinalizarCompra_Click(object sender, EventArgs e)
@@ -117,25 +118,18 @@ namespace TOP_Games
             {
                 MessageBox.Show("Insira o total recebido!");
             }
+            else if(int.Parse(txtTotalRecebido.Text) < total)
+            {
+                MessageBox.Show("Valor recebido abaixo do valor total!");
+            }
             else
             {
-                //consertar aq
-                string valorConvertido = lblSubtotal.Text.Replace(',', '.');
-                double totalRecebido = Convert.ToDouble(valorConvertido);
-                double valorTotal = Convert.ToDouble(lblSubtotal.Text);
+                double valorRecebido = Convert.ToDouble(txtTotalRecebido.Text);
+                double troco = valorRecebido - total;
+                lblTroco.Text = pastorSistemaMetrico(Convert.ToString(troco));
 
-                double total = totalRecebido - valorTotal;
-
-                lblTroco.Text = pastorSistemaMetrico(total.ToString());
-
+                MessageBox.Show("Locação concluida com sucesso");
             }
-        }
-
-        public string pastorSistemaMetrico(string valorAntigo)
-        {
-            string valorNovo = valorAntigo.Replace('.', ',');
-
-            return valorNovo;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -161,6 +155,36 @@ namespace TOP_Games
             }
 
             
+        }
+
+        //TRATAMENTO DE DADOS :)
+
+        public bool verificaVazio(string idCliente, string idJogo, string dataRetorno)
+        {
+            if(idCliente=="" || idJogo=="" || dataRetorno == "")
+            {
+                MessageBox.Show("Preencha os campos!");
+                txtDataRetorno.Text = "";
+                txtIdJogo.Text = "";
+                txtIdCliente.Text = "";
+                txtIdJogo.Focus();
+                lblCliente.Text = "";
+                lblJogo.Text = "";
+                lblPlataforma.Text = "";
+
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public string pastorSistemaMetrico(string valorAntigo)
+        {
+            string valorNovo = valorAntigo.Replace('.', ',');
+
+            return valorNovo;
         }
     }
 }
