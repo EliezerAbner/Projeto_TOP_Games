@@ -32,10 +32,12 @@ namespace TOP_Games
                 Locacao encerrar = new Locacao();
                 encerrar.buscarLocacao(int.Parse(txtCliente.Text), int.Parse(txtJogo.Text));
                 string dataLocacao = encerrar.dataLocacao;
+                /*
                 if (calculoMulta())
                 {
                     encerrar.excluirLocacao(int.Parse(txtCliente.Text), int.Parse(txtJogo.Text), dataLocacao);
                 }
+                */
             }
         }
 
@@ -59,10 +61,12 @@ namespace TOP_Games
             }
         }
 
+        /*
         private bool calculoMulta()
         {
             //comparar tempo para calculo de multa, que deve ser definido pelo usuario la no form de preços
             //boa sorte :)
         }
+        */
     }
 }

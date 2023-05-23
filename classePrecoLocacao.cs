@@ -13,20 +13,22 @@ namespace TOP_Games
     {
         public double valorLocacao { get; set; }
 
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\EliezerAbner\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
+        public double valorMulta { get; set; }
 
-        public void cadastrarPreco(double valor)
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games-master\\topGamesDB.mdf;Integrated Security=True");
+
+        public void cadastrarPreco(double valorLocacao, double valorMulta)
         {
-            string sql = "INSERT INTO PrecoLocacao (precoLocacao) VALUES ('" + valor + "')";
+            string sql = "INSERT INTO PrecoLocacao (precoLocacao, preocMulta) VALUES ('" + valorLocacao + "', '" + valorMulta + "')";
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();
         }
 
-        public void atualizarPreco(double valor)
+        public void atualizarPreco(double valorLocacao, double valorMulta)
         {
-            string sql = "UPDATE PrecoLocacao SET precoLocacao='" + valor + "'";
+            string sql = "UPDATE PrecoLocacao SET precoLocacao='" + valorLocacao + "', precoMulta = '" + valorMulta + "'";
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.ExecuteNonQuery();
@@ -43,6 +45,7 @@ namespace TOP_Games
             while (dr.Read())
             {
                 valorLocacao = Convert.ToDouble(dr["precoLocacao"]);
+                valorMulta = Convert.ToDouble(dr["precoMulta"]);
             }
             
             con.Close();

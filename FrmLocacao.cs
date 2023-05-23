@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,7 +43,6 @@ namespace TOP_Games
 
             if (Convert.ToBoolean(okJogo.jogoId) && int.Parse(okJogo.quantidade) > 0)  //verifica se o jogo existe e disponibilidade
             {
-                //MessageBox.Show("O jogo", okJogo.titulo, "existe");
                 lblJogo.Text = okJogo.titulo;
                 lblPlataforma.Text = okJogo.plataforma;
                 
@@ -81,19 +81,21 @@ namespace TOP_Games
                 Jogo AddNoCarrinho = new Jogo();
                 AddNoCarrinho.Quantidade(int.Parse(txtIdJogo.Text), 1, false);
 
-                dataLocacao = DateTime.Now.ToString();
+                dataLocacao = DateTime.Now.ToString("yyyy-MM-dd");
                 int idJogo = int.Parse(txtIdJogo.Text);
                 int idCliente = int.Parse(txtIdCliente.Text);
-                string dataRetorno = txtDataRetorno.Text;
+
+                string dataRetorno = converterDatas(Convert.ToDateTime(txtDataRetorno.Text));
+
                 Locacao addProduto = new Locacao();
                 addProduto.adicionarLocacao(dataLocacao, dataRetorno, idJogo, idCliente);
 
                 Locacao locacoes = new Locacao();
-                dataLocacao = DateTime.Now.ToString();
+                dataLocacao = DateTime.Now.ToString("yyyy-MM-dd");
                 List<Locacao> listaLocacoes = locacoes.listaLocacao(int.Parse(txtIdCliente.Text), dataLocacao);
                 dgvLocacao.DataSource = listaLocacoes;
                 txtIdJogo.Focus();
-                txtIdJogo.Text = "";
+                //txtIdJogo.Text = "";
                 txtDataRetorno.Text = "";
                 lblJogo.Text = "";
                 lblPlataforma.Text = "";
@@ -143,7 +145,7 @@ namespace TOP_Games
                 devolver.Quantidade(int.Parse(txtIdJogo.Text), 1, true);
 
                 Locacao apagarLocacao = new Locacao();
-                dataLocacao = DateTime.Now.ToString();
+                dataLocacao = DateTime.Now.ToString("yyyy-MM-dd");
                 apagarLocacao.excluirLocacao(int.Parse(txtIdCliente.Text), int.Parse(txtIdJogo.Text), Convert.ToString(dataLocacao));
                 Locacao locacoes = new Locacao();
                 List<Locacao> listaLocacoes = locacoes.listaLocacao(int.Parse(txtIdCliente.Text),dataLocacao);
@@ -186,6 +188,14 @@ namespace TOP_Games
         public string pastorSistemaMetrico(string valorAntigo)
         {
             string valorNovo = valorAntigo.Replace('.', ',');
+
+            return valorNovo;
+        }
+
+        public string converterDatas(DateTime valorAntigo) //recebe dd/mm/yyyy, sai yyyy-mm-dd
+        {
+            string inverterData = valorAntigo.ToString("yyyy-MM-dd");
+            string valorNovo = inverterData.Replace("/", "-");
 
             return valorNovo;
         }
