@@ -15,11 +15,11 @@ namespace TOP_Games
 
         public double valorMulta { get; set; }
 
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games-master\\topGamesDB.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
 
         public void cadastrarPreco(double valorLocacao, double valorMulta)
         {
-            string sql = "INSERT INTO PrecoLocacao (precoLocacao, preocMulta) VALUES ('" + valorLocacao + "', '" + valorMulta + "')";
+            string sql = "INSERT INTO PrecoLocacao (precoLocacao, precoMulta) VALUES ('" + valorLocacao + "', '" + valorMulta + "')";
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.ExecuteNonQuery();

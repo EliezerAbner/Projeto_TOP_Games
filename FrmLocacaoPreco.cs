@@ -21,8 +21,8 @@ namespace TOP_Games
         {
             PrecoLocacao listar = new PrecoLocacao();
             listar.buscarPreco();
-            txtLocacao.Text = listar.valorLocacao.ToString();
-            txtMulta.Text = listar.valorMulta.ToString(); 
+            txtLocacao.Text = pontoVirgula(listar.valorLocacao.ToString());
+            txtMulta.Text = pontoVirgula(listar.valorMulta.ToString()); 
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -52,6 +52,13 @@ namespace TOP_Games
         private string pastorSistemaMetrico(TextBox txt)
         {
             string valorNovo = txt.Text.Replace(",", ".");
+
+            return valorNovo;
+        }
+
+        private string pontoVirgula(string valorAntigo)
+        {
+            string valorNovo = valorAntigo.Replace(".", ",");
 
             return valorNovo;
         }

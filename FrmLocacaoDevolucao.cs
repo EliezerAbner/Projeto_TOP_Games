@@ -12,8 +12,9 @@ namespace TOP_Games
 {
     public partial class FrmLocacaoDevolucao : Form
     {
-        public string dataLocacao { get; set; }
-        public string dataHoje { get;set; }
+        public DateTime dataRetorno { get; set; }
+        public DateTime dataHoje { get;set; }
+        public double valorMulta { get;set; }
         public FrmLocacaoDevolucao()
         {
             InitializeComponent();
@@ -22,22 +23,37 @@ namespace TOP_Games
         private void FrmLocacaoDevolucao_Load(object sender, EventArgs e)
         {
             panelMulta.Visible = false;
-            dataHoje = DateTime.Now.ToString();
+            string hoje = DateTime.Now.ToString();
+            dataHoje = Convert.ToDateTime(hoje);
         }
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
+            int tBCliente = int.Parse(txtCliente.Text.Trim());
+            int tBJogo = int.Parse(txtJogo.Text.Trim());
+
             if (verificaVazios(txtCliente.Text, txtJogo.Text))
             {
                 Locacao encerrar = new Locacao();
-                encerrar.buscarLocacao(int.Parse(txtCliente.Text), int.Parse(txtJogo.Text));
-                string dataLocacao = encerrar.dataLocacao;
-                /*
+                encerrar.buscarLocacao(tBCliente, tBJogo);
+                dataRetorno = Convert.ToDateTime(encerrar.dataRetorno);
+                
                 if (calculoMulta())
                 {
-                    encerrar.excluirLocacao(int.Parse(txtCliente.Text), int.Parse(txtJogo.Text), dataLocacao);
+                    lblMulta.Text = Convert.ToString(valorMulta).Replace(".",",");
+                    panelMulta.Visible = true;
+                    encerrar.excluirLocacao(tBCliente, tBJogo);
+                    MessageBox.Show("Jogo devolvido com sucesso!");
                 }
-                */
+                else
+                {
+                    encerrar.excluirLocacao(tBCliente, tBJogo);
+                    MessageBox.Show("Jogo devolvido com sucesso!");
+
+                    txtCliente.Text = "";
+                    txtJogo.Text = "";
+                }
+                
             }
         }
 
@@ -61,12 +77,26 @@ namespace TOP_Games
             }
         }
 
-        /*
         private bool calculoMulta()
         {
-            //comparar tempo para calculo de multa, que deve ser definido pelo usuario la no form de preços
-            //boa sorte :)
+            if (dataRetorno < dataHoje) //data de entrega for menor que a de hoje
+            {
+                PrecoLocacao multa = new PrecoLocacao();
+                multa.buscarPreco();
+                double taxa = multa.valorMulta;
+
+                int dias = (dataHoje - dataRetorno).Days;
+                valorMulta = dias * taxa;
+                //conte os dias passados
+                //e calcule a multa
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        */
+        
     }
 }

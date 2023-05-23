@@ -65,7 +65,7 @@
             this.btnOk.Location = new System.Drawing.Point(171, 232);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(110, 38);
-            this.btnOk.TabIndex = 2;
+            this.btnOk.TabIndex = 3;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -89,7 +89,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(287, 232);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(110, 38);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -110,7 +110,7 @@
             this.txtMulta.Location = new System.Drawing.Point(78, 143);
             this.txtMulta.Name = "txtMulta";
             this.txtMulta.Size = new System.Drawing.Size(93, 35);
-            this.txtMulta.TabIndex = 7;
+            this.txtMulta.TabIndex = 2;
             // 
             // label4
             // 

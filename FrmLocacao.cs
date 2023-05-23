@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace TOP_Games
 {
@@ -17,6 +18,8 @@ namespace TOP_Games
         public double valorLocacao { get; set; }
         public string dataLocacao { get; set; }
         public double total { get; set; }
+
+        CultureInfo culture = new CultureInfo("pt-br");
 
         public FrmLocacao()
         {
@@ -84,8 +87,10 @@ namespace TOP_Games
                 dataLocacao = DateTime.Now.ToString("yyyy-MM-dd");
                 int idJogo = int.Parse(txtIdJogo.Text);
                 int idCliente = int.Parse(txtIdCliente.Text);
+                DateTime retorno = DateTime.ParseExact(txtDataRetorno.Text, "dd/MM/yyyy", null);
+                string dataRetorno = converterDatas(retorno);
 
-                string dataRetorno = converterDatas(Convert.ToDateTime(txtDataRetorno.Text));
+                //string dataRetorno = converterDatas(Convert.ToDateTime(txtDataRetorno.Text.Trim()));
 
                 Locacao addProduto = new Locacao();
                 addProduto.adicionarLocacao(dataLocacao, dataRetorno, idJogo, idCliente);
@@ -145,8 +150,7 @@ namespace TOP_Games
                 devolver.Quantidade(int.Parse(txtIdJogo.Text), 1, true);
 
                 Locacao apagarLocacao = new Locacao();
-                dataLocacao = DateTime.Now.ToString("yyyy-MM-dd");
-                apagarLocacao.excluirLocacao(int.Parse(txtIdCliente.Text), int.Parse(txtIdJogo.Text), Convert.ToString(dataLocacao));
+                apagarLocacao.excluirLocacao(int.Parse(txtIdCliente.Text), int.Parse(txtIdJogo.Text));
                 Locacao locacoes = new Locacao();
                 List<Locacao> listaLocacoes = locacoes.listaLocacao(int.Parse(txtIdCliente.Text),dataLocacao);
                 dgvLocacao.DataSource = listaLocacoes;

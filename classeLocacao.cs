@@ -17,7 +17,7 @@ namespace TOP_Games
         public int jogoId { get; set; }
         public int clienteId { get; set; }
 
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games-master\\topGamesDB.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
 
         public List<Locacao> listaLocacao(int Id, string diaLocacao)
         {
@@ -49,9 +49,9 @@ namespace TOP_Games
             con.Close();
         }
 
-        public void excluirLocacao(int clienteId, int jogoId, string dataLocacao)
+        public void excluirLocacao(int clienteId, int jogoId)
         {
-            string sql = "DELETE FROM Locacao WHERE clienteId='" + clienteId + "' AND dataLocacao='"+dataLocacao+"' AND jogoId='"+jogoId+"'";
+            string sql = "DELETE FROM Locacao WHERE clienteId='" + clienteId + "' AND jogoId='"+jogoId+"'";
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.ExecuteNonQuery();
