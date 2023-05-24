@@ -35,8 +35,10 @@ namespace TOP_Games
             if (verificaVazios(txtCliente.Text, txtJogo.Text))
             {
                 Locacao encerrar = new Locacao();
+                Jogo devolver = new Jogo();
                 encerrar.buscarLocacao(tBCliente, tBJogo);
-                if (Convert.ToBoolean(encerrar.dataRetorno))
+                
+                if (encerrar.dataRetorno != null)
                 {
                     dataRetorno = Convert.ToDateTime(encerrar.dataRetorno);
 
@@ -45,11 +47,13 @@ namespace TOP_Games
                         lblMulta.Text = Convert.ToString(valorMulta).Replace(".", ",");
                         panelMulta.Visible = true;
                         encerrar.excluirLocacao(tBCliente, tBJogo);
+                        devolver.Quantidade(tBJogo, 1, true);
                         MessageBox.Show("Jogo devolvido com sucesso!");
                     }
                     else
                     {
                         encerrar.excluirLocacao(tBCliente, tBJogo);
+                        devolver.Quantidade(tBJogo, 1, true);
                         MessageBox.Show("Jogo devolvido com sucesso!");
 
                         txtCliente.Text = "";

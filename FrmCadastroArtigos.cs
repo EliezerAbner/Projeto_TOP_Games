@@ -84,5 +84,11 @@ namespace TOP_Games
             txtPrecoVenda.Text = buscarArtigo.precoVenda;
             txtDescricao.Text = buscarArtigo.descricao;
         }
+
+        private bool ehNumerico(TextBox txt)
+        {
+            //return bool isNumeric = int.TryParse(txt.Text, out )
+            return true;
+        }
     }
 }
