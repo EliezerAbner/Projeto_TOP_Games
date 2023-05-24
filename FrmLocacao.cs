@@ -19,8 +19,6 @@ namespace TOP_Games
         public string dataLocacao { get; set; }
         public double total { get; set; }
 
-        CultureInfo culture = new CultureInfo("pt-br");
-
         public FrmLocacao()
         {
             InitializeComponent();

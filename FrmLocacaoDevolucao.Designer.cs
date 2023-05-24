@@ -65,7 +65,7 @@
             this.txtJogo.Location = new System.Drawing.Point(8, 123);
             this.txtJogo.Name = "txtJogo";
             this.txtJogo.Size = new System.Drawing.Size(151, 35);
-            this.txtJogo.TabIndex = 3;
+            this.txtJogo.TabIndex = 2;
             // 
             // label2
             // 
@@ -86,7 +86,7 @@
             this.btnDevolver.Location = new System.Drawing.Point(318, 12);
             this.btnDevolver.Name = "btnDevolver";
             this.btnDevolver.Size = new System.Drawing.Size(117, 52);
-            this.btnDevolver.TabIndex = 4;
+            this.btnDevolver.TabIndex = 3;
             this.btnDevolver.Text = "Devolver";
             this.btnDevolver.UseVisualStyleBackColor = false;
             this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
@@ -100,7 +100,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(318, 75);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(117, 52);
-            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Fechar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);

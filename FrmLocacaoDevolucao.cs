@@ -36,24 +36,33 @@ namespace TOP_Games
             {
                 Locacao encerrar = new Locacao();
                 encerrar.buscarLocacao(tBCliente, tBJogo);
-                dataRetorno = Convert.ToDateTime(encerrar.dataRetorno);
-                
-                if (calculoMulta())
+                if (Convert.ToBoolean(encerrar.dataRetorno))
                 {
-                    lblMulta.Text = Convert.ToString(valorMulta).Replace(".",",");
-                    panelMulta.Visible = true;
-                    encerrar.excluirLocacao(tBCliente, tBJogo);
-                    MessageBox.Show("Jogo devolvido com sucesso!");
+                    dataRetorno = Convert.ToDateTime(encerrar.dataRetorno);
+
+                    if (calculoMulta())
+                    {
+                        lblMulta.Text = Convert.ToString(valorMulta).Replace(".", ",");
+                        panelMulta.Visible = true;
+                        encerrar.excluirLocacao(tBCliente, tBJogo);
+                        MessageBox.Show("Jogo devolvido com sucesso!");
+                    }
+                    else
+                    {
+                        encerrar.excluirLocacao(tBCliente, tBJogo);
+                        MessageBox.Show("Jogo devolvido com sucesso!");
+
+                        txtCliente.Text = "";
+                        txtJogo.Text = "";
+                    }
                 }
                 else
                 {
-                    encerrar.excluirLocacao(tBCliente, tBJogo);
-                    MessageBox.Show("Jogo devolvido com sucesso!");
-
+                    MessageBox.Show("Locação não encontrada. Verifique os campos e tente novamente");
                     txtCliente.Text = "";
                     txtJogo.Text = "";
+                    txtCliente.Focus();
                 }
-                
             }
         }
 

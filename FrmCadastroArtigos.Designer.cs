@@ -59,7 +59,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(635, 65);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(145, 30);
-            this.btnBuscar.TabIndex = 16;
+            this.btnBuscar.TabIndex = 9;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -75,7 +75,7 @@
             this.btnApagar.Location = new System.Drawing.Point(248, 509);
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.Size = new System.Drawing.Size(108, 41);
-            this.btnApagar.TabIndex = 15;
+            this.btnApagar.TabIndex = 7;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = false;
             this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
@@ -91,7 +91,7 @@
             this.btnAtualizar.Location = new System.Drawing.Point(134, 509);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(108, 41);
-            this.btnAtualizar.TabIndex = 14;
+            this.btnAtualizar.TabIndex = 6;
             this.btnAtualizar.Text = "Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
@@ -107,7 +107,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(20, 509);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(108, 41);
-            this.btnCadastrar.TabIndex = 13;
+            this.btnCadastrar.TabIndex = 5;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -117,7 +117,7 @@
             this.txtId.Location = new System.Drawing.Point(435, 68);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(181, 20);
-            this.txtId.TabIndex = 12;
+            this.txtId.TabIndex = 8;
             // 
             // label8
             // 
@@ -152,7 +152,7 @@
             this.txtDescricao.Location = new System.Drawing.Point(0, 144);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(257, 96);
-            this.txtDescricao.TabIndex = 15;
+            this.txtDescricao.TabIndex = 4;
             this.txtDescricao.Text = "";
             // 
             // label2
@@ -174,7 +174,7 @@
             this.txtPrecoVenda.Location = new System.Drawing.Point(0, 103);
             this.txtPrecoVenda.Name = "txtPrecoVenda";
             this.txtPrecoVenda.Size = new System.Drawing.Size(257, 20);
-            this.txtPrecoVenda.TabIndex = 13;
+            this.txtPrecoVenda.TabIndex = 3;
             // 
             // label7
             // 
@@ -195,7 +195,7 @@
             this.txtQuantidade.Location = new System.Drawing.Point(0, 62);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(257, 20);
-            this.txtQuantidade.TabIndex = 11;
+            this.txtQuantidade.TabIndex = 2;
             // 
             // label6
             // 

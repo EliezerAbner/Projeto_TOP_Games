@@ -85,7 +85,7 @@
             this.btnOkJogo.Location = new System.Drawing.Point(301, 149);
             this.btnOkJogo.Name = "btnOkJogo";
             this.btnOkJogo.Size = new System.Drawing.Size(46, 35);
-            this.btnOkJogo.TabIndex = 25;
+            this.btnOkJogo.TabIndex = 2;
             this.btnOkJogo.Text = "OK";
             this.btnOkJogo.UseVisualStyleBackColor = false;
             this.btnOkJogo.Click += new System.EventHandler(this.btnOkJogo_Click);
@@ -99,7 +99,7 @@
             this.btnAddProdutos.Location = new System.Drawing.Point(12, 484);
             this.btnAddProdutos.Name = "btnAddProdutos";
             this.btnAddProdutos.Size = new System.Drawing.Size(116, 67);
-            this.btnAddProdutos.TabIndex = 24;
+            this.btnAddProdutos.TabIndex = 6;
             this.btnAddProdutos.Text = "Adicionar Locação";
             this.btnAddProdutos.UseVisualStyleBackColor = false;
             this.btnAddProdutos.Click += new System.EventHandler(this.btnAddProdutos_Click);
@@ -113,7 +113,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(162, 484);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(116, 67);
-            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -127,7 +127,7 @@
             this.btnFinalizarCompra.Location = new System.Drawing.Point(12, 557);
             this.btnFinalizarCompra.Name = "btnFinalizarCompra";
             this.btnFinalizarCompra.Size = new System.Drawing.Size(266, 67);
-            this.btnFinalizarCompra.TabIndex = 22;
+            this.btnFinalizarCompra.TabIndex = 8;
             this.btnFinalizarCompra.Text = "Finalizar Compra";
             this.btnFinalizarCompra.UseVisualStyleBackColor = false;
             this.btnFinalizarCompra.Click += new System.EventHandler(this.btnFinalizarCompra_Click);
@@ -224,7 +224,7 @@
             this.txtTotalRecebido.Location = new System.Drawing.Point(54, 30);
             this.txtTotalRecebido.Name = "txtTotalRecebido";
             this.txtTotalRecebido.Size = new System.Drawing.Size(226, 35);
-            this.txtTotalRecebido.TabIndex = 1;
+            this.txtTotalRecebido.TabIndex = 9;
             // 
             // label7
             // 
@@ -370,7 +370,7 @@
             this.btnOkCliente.Location = new System.Drawing.Point(301, 231);
             this.btnOkCliente.Name = "btnOkCliente";
             this.btnOkCliente.Size = new System.Drawing.Size(46, 35);
-            this.btnOkCliente.TabIndex = 27;
+            this.btnOkCliente.TabIndex = 4;
             this.btnOkCliente.Text = "OK";
             this.btnOkCliente.UseVisualStyleBackColor = false;
             this.btnOkCliente.Click += new System.EventHandler(this.btnOkCliente_Click);
@@ -393,7 +393,7 @@
             this.txtIdCliente.Location = new System.Drawing.Point(0, 30);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.Size = new System.Drawing.Size(266, 35);
-            this.txtIdCliente.TabIndex = 1;
+            this.txtIdCliente.TabIndex = 3;
             // 
             // label2
             // 
@@ -424,7 +424,7 @@
             this.txtDataRetorno.Location = new System.Drawing.Point(0, 30);
             this.txtDataRetorno.Name = "txtDataRetorno";
             this.txtDataRetorno.Size = new System.Drawing.Size(266, 35);
-            this.txtDataRetorno.TabIndex = 1;
+            this.txtDataRetorno.TabIndex = 5;
             // 
             // label4
             // 

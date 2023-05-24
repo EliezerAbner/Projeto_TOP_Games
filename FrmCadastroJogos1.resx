@@ -136,7 +136,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnBuscar.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>12</value>
   </data>
   <data name="btnBuscar.Text" xml:space="preserve">
     <value>Buscar</value>
@@ -169,7 +169,7 @@
     <value>108, 41</value>
   </data>
   <data name="btnApagar.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>10</value>
   </data>
   <data name="btnApagar.Text" xml:space="preserve">
     <value>Apagar</value>
@@ -202,7 +202,7 @@
     <value>108, 41</value>
   </data>
   <data name="btnAtualizar.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>9</value>
   </data>
   <data name="btnAtualizar.Text" xml:space="preserve">
     <value>Atualizar</value>
@@ -235,7 +235,7 @@
     <value>108, 41</value>
   </data>
   <data name="btnCadastrar.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>8</value>
   </data>
   <data name="btnCadastrar.Text" xml:space="preserve">
     <value>Cadastrar</value>
@@ -259,7 +259,7 @@
     <value>181, 20</value>
   </data>
   <data name="txtId.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;txtId.Name" xml:space="preserve">
     <value>txtId</value>
@@ -316,7 +316,7 @@
     <value>257, 20</value>
   </data>
   <data name="txtPrecoVenda.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;txtPrecoVenda.Name" xml:space="preserve">
     <value>txtPrecoVenda</value>
@@ -376,7 +376,7 @@
     <value>257, 20</value>
   </data>
   <data name="txtQuantidade.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;txtQuantidade.Name" xml:space="preserve">
     <value>txtQuantidade</value>
@@ -436,7 +436,7 @@
     <value>257, 20</value>
   </data>
   <data name="txtAnoLancamento.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;txtAnoLancamento.Name" xml:space="preserve">
     <value>txtAnoLancamento</value>
@@ -496,7 +496,7 @@
     <value>257, 20</value>
   </data>
   <data name="txtDesenvolvedora.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;txtDesenvolvedora.Name" xml:space="preserve">
     <value>txtDesenvolvedora</value>
@@ -556,7 +556,7 @@
     <value>257, 20</value>
   </data>
   <data name="txtGenero.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;txtGenero.Name" xml:space="preserve">
     <value>txtGenero</value>
@@ -616,7 +616,7 @@
     <value>257, 20</value>
   </data>
   <data name="txtPlataforma.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;txtPlataforma.Name" xml:space="preserve">
     <value>txtPlataforma</value>

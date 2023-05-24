@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace TOP_Games
 {
-    class Locacao
+    class Locacao : Conexao
     {
         public int locacaoId { get; set; }
         public string dataLocacao { get; set; }
@@ -17,12 +17,14 @@ namespace TOP_Games
         public int jogoId { get; set; }
         public int clienteId { get; set; }
 
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
-
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
+            
         public List<Locacao> listaLocacao(int Id, string diaLocacao)
         {
+             
             List<Locacao> li = new List<Locacao>();
             string sql = "SELECT * FROM Locacao WHERE clienteId='"+Id+"' AND dataLocacao='"+diaLocacao+"'";
+            
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader dataReader = cmd.ExecuteReader();
