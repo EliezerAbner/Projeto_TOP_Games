@@ -90,7 +90,7 @@ namespace TOP_Games
                 //string dataRetorno = converterDatas(Convert.ToDateTime(txtDataRetorno.Text.Trim()));
 
                 Locacao addProduto = new Locacao();
-                addProduto.adicionarLocacao(dataLocacao, "teste", idJogo, idCliente);
+                addProduto.adicionarLocacao(dataLocacao, calendario, idJogo, idCliente);
 
                 Locacao locacoes = new Locacao();
                 dataLocacao = DateTime.Now.ToString("yyyy-MM-dd");
