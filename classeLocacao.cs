@@ -17,7 +17,7 @@ namespace TOP_Games
         public int jogoId { get; set; }
         public int clienteId { get; set; }
 
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Aluno\\Source\\Repos\\EliezerAbner\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
             
         public List<Locacao> listaLocacao(int Id, string diaLocacao)
         {

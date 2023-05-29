@@ -18,6 +18,7 @@ namespace TOP_Games
         public double valorLocacao { get; set; }
         public string dataLocacao { get; set; }
         public double total { get; set; }
+        public DateTime calendario { get; set; }
 
         public FrmLocacao()
         {
@@ -31,8 +32,6 @@ namespace TOP_Games
             preco.buscarPreco();
             valorLocacao = preco.valorLocacao;
             total = 0;
-
-
         }
 
         private void btnOkJogo_Click(object sender, EventArgs e)
@@ -77,7 +76,7 @@ namespace TOP_Games
 
         private void btnAddProdutos_Click(object sender, EventArgs e)
         {
-            if(verificaVazio(txtIdCliente.Text, txtIdJogo.Text, txtDataRetorno.Text))
+            if(verificaVazio(txtIdCliente.Text, txtIdJogo.Text)) //txtDataRetorno.Text))
             {
                 Jogo AddNoCarrinho = new Jogo();
                 AddNoCarrinho.Quantidade(int.Parse(txtIdJogo.Text), 1, false);
@@ -85,21 +84,21 @@ namespace TOP_Games
                 dataLocacao = DateTime.Now.ToString("yyyy-MM-dd");
                 int idJogo = int.Parse(txtIdJogo.Text);
                 int idCliente = int.Parse(txtIdCliente.Text);
-                DateTime retorno = DateTime.ParseExact(txtDataRetorno.Text, "dd/MM/yyyy", null);
-                string dataRetorno = converterDatas(retorno);
+                //DateTime retorno = DateTime.ParseExact(txtDataRetorno.Text, "dd/MM/yyyy", null);
+                //string dataRetorno = converterDatas(retorno);
 
                 //string dataRetorno = converterDatas(Convert.ToDateTime(txtDataRetorno.Text.Trim()));
 
                 Locacao addProduto = new Locacao();
-                addProduto.adicionarLocacao(dataLocacao, dataRetorno, idJogo, idCliente);
+                addProduto.adicionarLocacao(dataLocacao, "teste", idJogo, idCliente);
 
                 Locacao locacoes = new Locacao();
                 dataLocacao = DateTime.Now.ToString("yyyy-MM-dd");
                 List<Locacao> listaLocacoes = locacoes.listaLocacao(int.Parse(txtIdCliente.Text), dataLocacao);
                 dgvLocacao.DataSource = listaLocacoes;
                 txtIdJogo.Focus();
-                //txtIdJogo.Text = "";
-                txtDataRetorno.Text = "";
+                txtIdJogo.Text = "";
+                //txtDataRetorno.Text = "";
                 lblJogo.Text = "";
                 lblPlataforma.Text = "";
 
@@ -166,12 +165,12 @@ namespace TOP_Games
 
         //TRATAMENTO DE DADOS :)
 
-        public bool verificaVazio(string idCliente, string idJogo, string dataRetorno)
+        public bool verificaVazio(string idCliente, string idJogo)
         {
-            if(idCliente=="" || idJogo=="" || dataRetorno == "")
+            if(idCliente=="" || idJogo=="")
             {
                 MessageBox.Show("Preencha os campos!");
-                txtDataRetorno.Text = "";
+                //txtDataRetorno.Text = "";
                 txtIdJogo.Text = "";
                 txtIdCliente.Text = "";
                 txtIdJogo.Focus();
@@ -201,5 +200,31 @@ namespace TOP_Games
 
             return valorNovo;
         }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            calendario = e.Start;
+        }
     }
 }
+
+/*
+private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+{
+    this.label2.Text = e.Start.ToShortDateString();
+}
+
+public void InserirData(DateTime data)
+{
+    string format = "yyyy-MM-dd HH:mm:ss";
+    string sql = "INSERT INTO Data(dataatual) VALUES ('" + data.ToString(format) + "')";
+    if (con.State == ConnectionState.Open)
+    {
+        con.Close();
+    }
+    con.Open();
+    SqlCommand cmd = new SqlCommand(sql, con);
+    cmd.ExecuteNonQuery();
+    con.Close();
+}
+*/
