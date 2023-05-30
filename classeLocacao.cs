@@ -42,7 +42,7 @@ namespace TOP_Games
             return li;
         }
 
-        public void adicionarLocacao(string dataLocacao, DateTime dataRetorno, int jogoId, int clienteId)
+        public void adicionarLocacao(string dataLocacao, string dataRetorno, int jogoId, int clienteId)
         {
             string sql = "INSERT INTO Locacao (dataLocacao, dataRetorno, jogoId, clienteId) VALUES ('"+dataLocacao+"', '"+dataRetorno+"', '"+jogoId+"', '"+clienteId+"')";
             con.Open();

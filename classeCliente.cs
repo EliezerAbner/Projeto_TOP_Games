@@ -15,8 +15,10 @@ namespace TOP_Games
         public string nome { get; set; }
         public string dataNascimento { get; set; }
         public string cpf { get; set; }
-        public string[] telefone { get; set; }
-        public string[] telefoneId { get; set; }
+        public string celular  { get; set; }
+        public string telContato { get; set; }
+        public string telefoneId { get; set; }
+        public string telefone { get; set; }
         public string email { get; set; }
         public string logradouro { get; set; }
         public string numero { get; set; }
@@ -127,13 +129,17 @@ namespace TOP_Games
             if (dataReader.HasRows)
             {
                 int contador = 0;
+                string[] tel = new string[2];
+                string[] telId = new string[2];
 
-                while (dataReader.Read())
+                while (dataReader.Read()) 
                 {
-                    telefone[contador] = dataReader["telefone"].ToString();
-                    telefoneId[contador] = dataReader["telefoneId"].ToString();
+                    tel[contador] = dataReader["telefone"].ToString();
+                    telId[contador] = dataReader["telefoneId"].ToString();
                     contador++;
                 }
+                celular = tel[0];
+                telContato = tel[1];
             }
             con.Close();
         }
@@ -144,3 +150,11 @@ namespace TOP_Games
         }
     }
 }
+
+//int contador = 0;
+//while (dataReader.Read())
+//{
+//    telefone[contador] = dataReader["telefone"].ToString();
+//    telefoneId[contador] = dataReader["telefoneId"].ToString();
+//    contador++;
+//}

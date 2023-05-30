@@ -15,10 +15,11 @@ namespace TOP_Games
     public partial class FrmLocacao : Form
     {
         
+        public string idJogoTxt { get; set; }
         public double valorLocacao { get; set; }
         public string dataLocacao { get; set; }
         public double total { get; set; }
-        public DateTime calendario { get; set; }
+        public string calendario { get; set; }
 
         public FrmLocacao()
         {
@@ -32,6 +33,8 @@ namespace TOP_Games
             preco.buscarPreco();
             valorLocacao = preco.valorLocacao;
             total = 0;
+            calendario = "";
+            idJogoTxt = "";
         }
 
         private void btnOkJogo_Click(object sender, EventArgs e)
@@ -57,6 +60,7 @@ namespace TOP_Games
 
         private void btnOkCliente_Click(object sender, EventArgs e)
         {
+
             int Id = int.Parse(txtIdCliente.Text);
             Cliente okCliente = new Cliente();
 
@@ -76,7 +80,7 @@ namespace TOP_Games
 
         private void btnAddProdutos_Click(object sender, EventArgs e)
         {
-            if(verificaVazio(txtIdCliente.Text, txtIdJogo.Text)) //txtDataRetorno.Text))
+            if(verificaVazio(txtIdCliente.Text, txtIdJogo.Text, calendario)) 
             {
                 Jogo AddNoCarrinho = new Jogo();
                 AddNoCarrinho.Quantidade(int.Parse(txtIdJogo.Text), 1, false);
@@ -97,6 +101,7 @@ namespace TOP_Games
                 List<Locacao> listaLocacoes = locacoes.listaLocacao(int.Parse(txtIdCliente.Text), dataLocacao);
                 dgvLocacao.DataSource = listaLocacoes;
                 txtIdJogo.Focus();
+                idJogoTxt = txtIdJogo.Text;
                 txtIdJogo.Text = "";
                 //txtDataRetorno.Text = "";
                 lblJogo.Text = "";
@@ -138,16 +143,16 @@ namespace TOP_Games
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            dataLocacao = DateTime.Now.ToString();
+            dataLocacao = DateTime.Now.ToString("yyyy-MM-dd");
             var resposta = MessageBox.Show("Deseja cancelar locação?", "Cancelar locação", MessageBoxButtons.YesNo);
 
             if(resposta == DialogResult.Yes)
             {
                 Jogo devolver = new Jogo();
-                devolver.Quantidade(int.Parse(txtIdJogo.Text), 1, true);
+                devolver.Quantidade(int.Parse(idJogoTxt), 1, true);
 
                 Locacao apagarLocacao = new Locacao();
-                apagarLocacao.excluirLocacao(int.Parse(txtIdCliente.Text), int.Parse(txtIdJogo.Text));
+                apagarLocacao.excluirLocacao(int.Parse(txtIdCliente.Text), int.Parse(idJogoTxt));
                 Locacao locacoes = new Locacao();
                 List<Locacao> listaLocacoes = locacoes.listaLocacao(int.Parse(txtIdCliente.Text),dataLocacao);
                 dgvLocacao.DataSource = listaLocacoes;
@@ -165,12 +170,11 @@ namespace TOP_Games
 
         //TRATAMENTO DE DADOS :)
 
-        public bool verificaVazio(string idCliente, string idJogo)
+        public bool verificaVazio(string idCliente, string idJogo, string calendario)
         {
-            if(idCliente=="" || idJogo=="")
+            if(idCliente=="" || idJogo=="" || calendario=="")
             {
                 MessageBox.Show("Preencha os campos!");
-                //txtDataRetorno.Text = "";
                 txtIdJogo.Text = "";
                 txtIdCliente.Text = "";
                 txtIdJogo.Focus();
@@ -203,7 +207,8 @@ namespace TOP_Games
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            calendario = e.Start;
+            DateTime formatoBr = e.Start;
+            calendario = formatoBr.ToString("yyyy-MM-dd");
         }
     }
 }
