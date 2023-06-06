@@ -17,6 +17,7 @@ namespace TOP_Games
         public string cpf { get; set; }
         public string celular  { get; set; }
         public string telContato { get; set; }
+        public string celularId { get; set; }
         public string telefoneId { get; set; }
         public string telefone { get; set; }
         public string email { get; set; }
@@ -25,7 +26,7 @@ namespace TOP_Games
         public string bairro { get; set; }
         public string cidade { get; set; }
 
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Aluno\\Source\\Repos\\EliezerAbner\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
 
         public List<Cliente> listaCliente()
         {
@@ -85,7 +86,7 @@ namespace TOP_Games
 
             Cliente buscaTelefone = new Cliente();
             buscaTelefone.Buscar(Id);
-            string[] idTelefone = buscaTelefone.telefoneId;
+            string[] idTelefone = { buscaTelefone.celularId, buscaTelefone.telefoneId };
 
 
             for(int i = 0; i < telefone.Length; i++)
@@ -140,6 +141,9 @@ namespace TOP_Games
                 }
                 celular = tel[0];
                 telContato = tel[1];
+
+                celularId = telId[0];
+                telefoneId = telId[1];
             }
             con.Close();
         }
