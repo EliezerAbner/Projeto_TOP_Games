@@ -69,6 +69,7 @@
     <Compile Include="classeJogo.cs" />
     <Compile Include="classeLocacao.cs" />
     <Compile Include="classePrecoLocacao.cs" />
+    <Compile Include="classeVenda.cs" />
     <Compile Include="FormSplash.cs">
       <SubType>Form</SubType>
     </Compile>

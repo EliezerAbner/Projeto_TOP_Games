@@ -15,7 +15,7 @@ namespace TOP_Games
         public string precoVenda { get; set; }
         public string descricao { get; set; }
 
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Aluno\\Source\\Repos\\EliezerAbner\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
 
         public List<Artigo> listaArtigos()
         {
