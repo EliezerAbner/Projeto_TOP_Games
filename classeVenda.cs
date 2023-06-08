@@ -51,7 +51,7 @@ namespace TOP_Games
             return li;
         }
 
-        public int CriarVenda(DateTime dataVenda)
+        public void CriarVenda(DateTime dataVenda)
         {
             string sql = "INSERT INTO Vendas(dataVenda) VALUES ('"+dataVenda+"')";
             con.Open();
@@ -60,9 +60,21 @@ namespace TOP_Games
             con.Close();
 
             string sqlId = "SELECT max(vendaId) AS id FROM Vendas";
-            int SoPraNaoQuebrar = 0;
+            SqlCommand cmd = new SqlCommand(sqlId, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                vendaId = (int)dr["id"];
+            }
+        }
 
-            return SoPraNaoQuebrar;
+        public void AtualizarVenda(int vendaId, decimal precoTotal)
+        {
+            string sql = "UPDATE Vendas SET valorTotal='" + precoTotal + "'";
+            con.Open();
+            SqlCommand cadArtigo = new SqlCommand(sql, con);
+            cadArtigo.ExecuteNonQuery();
+            con.Close();
         }
 
         public void InserirPedido(int vendaId, int artigoId, int qtdeArtigo, int jogoId, int qtdeJogo)
@@ -73,5 +85,15 @@ namespace TOP_Games
             cadArtigo.ExecuteNonQuery();
             con.Close();
         }
+
+        public void ExcluirPedido(int vendaId)
+        {
+            string sql = "DELETE * FROM Pedidos WHERE vendaId='" + vendaId + "'";
+            con.Open();
+            SqlCommand cadArtigo = new SqlCommand(sql, con);
+            cadArtigo.ExecuteNonQuery();
+            con.Close();
+        }
+        
     }
 }
