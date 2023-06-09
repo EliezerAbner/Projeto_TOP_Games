@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnAddProdutos = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnFinalizarCompra = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnSubtrair = new System.Windows.Forms.Button();
-            this.btnConfirmaQuantidade = new System.Windows.Forms.Button();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.lblValorUnitario = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -48,15 +49,21 @@
             this.txtTotalRecebido = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblTroco = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvVendas = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chbJogo = new System.Windows.Forms.CheckBox();
+            this.chbArtigo = new System.Windows.Forms.CheckBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.topGamesDBDataSet = new TOP_Games.topGamesDBDataSet();
+            this.topGamesDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -65,6 +72,8 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.topGamesDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.topGamesDBDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOk
@@ -79,6 +88,7 @@
             this.btnOk.TabIndex = 25;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnAddProdutos
             // 
@@ -92,6 +102,7 @@
             this.btnAddProdutos.TabIndex = 24;
             this.btnAddProdutos.Text = "Adicionar Produtos";
             this.btnAddProdutos.UseVisualStyleBackColor = false;
+            this.btnAddProdutos.Click += new System.EventHandler(this.btnAddProdutos_Click);
             // 
             // btnCancelar
             // 
@@ -122,13 +133,12 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.btnSubtrair);
-            this.panel7.Controls.Add(this.btnConfirmaQuantidade);
             this.panel7.Controls.Add(this.btnAdicionar);
             this.panel7.Controls.Add(this.lblQuantidade);
             this.panel7.Controls.Add(this.label13);
-            this.panel7.Location = new System.Drawing.Point(12, 312);
+            this.panel7.Location = new System.Drawing.Point(12, 340);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(266, 118);
+            this.panel7.Size = new System.Drawing.Size(266, 79);
             this.panel7.TabIndex = 21;
             // 
             // btnSubtrair
@@ -137,24 +147,12 @@
             this.btnSubtrair.FlatAppearance.BorderSize = 0;
             this.btnSubtrair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtrair.Image = global::TOP_Games.Properties.Resources.minus;
-            this.btnSubtrair.Location = new System.Drawing.Point(54, 63);
+            this.btnSubtrair.Location = new System.Drawing.Point(220, 30);
             this.btnSubtrair.Name = "btnSubtrair";
             this.btnSubtrair.Size = new System.Drawing.Size(43, 40);
             this.btnSubtrair.TabIndex = 5;
             this.btnSubtrair.UseVisualStyleBackColor = false;
-            // 
-            // btnConfirmaQuantidade
-            // 
-            this.btnConfirmaQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(213)))), ((int)(((byte)(108)))));
-            this.btnConfirmaQuantidade.FlatAppearance.BorderSize = 0;
-            this.btnConfirmaQuantidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmaQuantidade.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmaQuantidade.Location = new System.Drawing.Point(103, 63);
-            this.btnConfirmaQuantidade.Name = "btnConfirmaQuantidade";
-            this.btnConfirmaQuantidade.Size = new System.Drawing.Size(160, 40);
-            this.btnConfirmaQuantidade.TabIndex = 4;
-            this.btnConfirmaQuantidade.Text = "Confirma Quantidade";
-            this.btnConfirmaQuantidade.UseVisualStyleBackColor = false;
+            this.btnSubtrair.Click += new System.EventHandler(this.btnSubtrair_Click);
             // 
             // btnAdicionar
             // 
@@ -162,22 +160,23 @@
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionar.Image = global::TOP_Games.Properties.Resources.plus;
-            this.btnAdicionar.Location = new System.Drawing.Point(5, 63);
+            this.btnAdicionar.Location = new System.Drawing.Point(171, 30);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(43, 40);
             this.btnAdicionar.TabIndex = 2;
             this.btnAdicionar.UseVisualStyleBackColor = false;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // lblQuantidade
             // 
             this.lblQuantidade.AutoSize = true;
-            this.lblQuantidade.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblQuantidade.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblQuantidade.Location = new System.Drawing.Point(71, 30);
+            this.lblQuantidade.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblQuantidade.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblQuantidade.Location = new System.Drawing.Point(0, 30);
             this.lblQuantidade.Name = "lblQuantidade";
-            this.lblQuantidade.Size = new System.Drawing.Size(195, 30);
+            this.lblQuantidade.Size = new System.Drawing.Size(146, 37);
             this.lblQuantidade.TabIndex = 1;
-            this.lblQuantidade.Text = "sdfsdfsdfsfsfsfsdf";
+            this.lblQuantidade.Text = "sdfsdfsdfs";
             this.lblQuantidade.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // label13
@@ -193,12 +192,24 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.label12);
             this.panel6.Controls.Add(this.lblValorUnitario);
             this.panel6.Controls.Add(this.label11);
-            this.panel6.Location = new System.Drawing.Point(12, 212);
+            this.panel6.Location = new System.Drawing.Point(12, 240);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(266, 66);
             this.panel6.TabIndex = 20;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(0, 30);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(39, 30);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "R$";
             // 
             // lblValorUnitario
             // 
@@ -227,7 +238,7 @@
             // 
             this.panel5.Controls.Add(this.lblProduto);
             this.panel5.Controls.Add(this.label9);
-            this.panel5.Location = new System.Drawing.Point(12, 119);
+            this.panel5.Location = new System.Drawing.Point(12, 147);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(266, 66);
             this.panel5.TabIndex = 19;
@@ -288,12 +299,24 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.lblTroco);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(735, 521);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(280, 66);
             this.panel2.TabIndex = 17;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(0, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 30);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "R$";
             // 
             // lblTroco
             // 
@@ -320,12 +343,24 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.lblSubtotal);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(422, 448);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(596, 52);
+            this.panel3.Size = new System.Drawing.Size(596, 67);
             this.panel3.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(0, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 30);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "R$";
             // 
             // lblSubtotal
             // 
@@ -345,9 +380,9 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 30);
+            this.label3.Size = new System.Drawing.Size(76, 30);
             this.label3.TabIndex = 0;
-            this.label3.Text = "SUBTOTAL";
+            this.label3.Text = "TOTAL";
             // 
             // dgvVendas
             // 
@@ -359,12 +394,38 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.chbJogo);
+            this.panel1.Controls.Add(this.chbArtigo);
             this.panel1.Controls.Add(this.txtId);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(266, 76);
+            this.panel1.Size = new System.Drawing.Size(266, 104);
             this.panel1.TabIndex = 14;
+            // 
+            // chbJogo
+            // 
+            this.chbJogo.AutoSize = true;
+            this.chbJogo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbJogo.Location = new System.Drawing.Point(183, 71);
+            this.chbJogo.Name = "chbJogo";
+            this.chbJogo.Size = new System.Drawing.Size(80, 29);
+            this.chbJogo.TabIndex = 3;
+            this.chbJogo.Text = "Jogos";
+            this.chbJogo.UseVisualStyleBackColor = true;
+            this.chbJogo.CheckedChanged += new System.EventHandler(this.chbJogo_CheckedChanged);
+            // 
+            // chbArtigo
+            // 
+            this.chbArtigo.AutoSize = true;
+            this.chbArtigo.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbArtigo.Location = new System.Drawing.Point(5, 71);
+            this.chbArtigo.Name = "chbArtigo";
+            this.chbArtigo.Size = new System.Drawing.Size(94, 29);
+            this.chbArtigo.TabIndex = 2;
+            this.chbArtigo.Text = "Artigos";
+            this.chbArtigo.UseVisualStyleBackColor = true;
+            this.chbArtigo.CheckedChanged += new System.EventHandler(this.chbArtigo_CheckedChanged);
             // 
             // txtId
             // 
@@ -388,6 +449,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
+            // topGamesDBDataSet
+            // 
+            this.topGamesDBDataSet.DataSetName = "topGamesDBDataSet";
+            this.topGamesDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // topGamesDBDataSetBindingSource
+            // 
+            this.topGamesDBDataSetBindingSource.DataSource = this.topGamesDBDataSet;
+            this.topGamesDBDataSetBindingSource.Position = 0;
+            // 
             // FrmVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -409,6 +480,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmVenda";
+            this.Load += new System.EventHandler(this.FrmVenda_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -424,6 +496,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.topGamesDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.topGamesDBDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -436,7 +510,6 @@
         private System.Windows.Forms.Button btnFinalizarCompra;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnSubtrair;
-        private System.Windows.Forms.Button btnConfirmaQuantidade;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Label lblQuantidade;
         private System.Windows.Forms.Label label13;
@@ -459,5 +532,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chbJogo;
+        private System.Windows.Forms.CheckBox chbArtigo;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.BindingSource topGamesDBDataSetBindingSource;
+        private topGamesDBDataSet topGamesDBDataSet;
     }
 }

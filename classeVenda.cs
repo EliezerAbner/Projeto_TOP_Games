@@ -10,12 +10,6 @@ namespace TOP_Games
     class Venda
     {
         public int vendaId { get; set; }
-        public int artigoId { get; set; }
-        public int qtdeArtigo { get; set; }
-        public int jogoId { get; set; }
-        public int qtdeJogo { get; set; }
-        public DateTime dataVenda { get; set; }
-        public float precoTotal { get; set; }
         public string produto { get; set; }
         public int quantidade { get; set; }
         public decimal precoUnitario { get; set; }
@@ -23,18 +17,18 @@ namespace TOP_Games
 
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
 
-        public List<Venda> listaPedidos(string produto, int jogoId, int artigoId)
+        public List<Venda> listaPedidos(string produto, string produtoId)
         {
             List<Venda> li = new List<Venda> ();
             string sql = "";
             
             if(produto == "ARTIGO")
             {
-                sql = "EXEC listaArtigo @artigoId '"+artigoId+"'";
+                sql = "EXEC listaArtigo @artigoId '"+ produtoId + "'";
             }
             else if (produto == "JOGO")
             {
-                sql = "EXEC listaJogo @jogoId = '"+jogoId+"'";
+                sql = "EXEC listaJogo @jogoId = '"+ produtoId + "'";
             }
 
             con.Open();
@@ -59,27 +53,46 @@ namespace TOP_Games
             cadArtigo.ExecuteNonQuery();
             con.Close();
 
+            
             string sqlId = "SELECT max(vendaId) AS id FROM Vendas";
+            con.Open ();
             SqlCommand cmd = new SqlCommand(sqlId, con);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 vendaId = (int)dr["id"];
             }
+            con.Close();
         }
 
         public void AtualizarVenda(int vendaId, decimal precoTotal)
         {
-            string sql = "UPDATE Vendas SET valorTotal='" + precoTotal + "'";
+            string sql = "UPDATE Vendas SET valorTotal='" + precoTotal + "' WHERE vendaId ='"+vendaId+"'";
             con.Open();
             SqlCommand cadArtigo = new SqlCommand(sql, con);
             cadArtigo.ExecuteNonQuery();
             con.Close();
         }
 
-        public void InserirPedido(int vendaId, int artigoId, int qtdeArtigo, int jogoId, int qtdeJogo)
+        public bool BuscarVenda(int vendaId)
         {
-            string sql = "INSERT INTO Pedidos(vendaId, artigoId, qtdeArtigo, jogoId, qtdeJogo)";
+            string sql = "SELECT * FROM Vendas WHERE vendaId='" + vendaId + "'";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if(dr.HasRows)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void InserirPedido(int vendaId, string artigoId, string qtdeArtigo, string jogoId, string qtdeJogo) 
+        { 
+            string sql = "INSERT INTO Pedidos(vendaId, artigoId, qtdeArtigo, jogoId, qtdeJogo) VALUES ('"+ vendaId + "', '"+ artigoId + "', '"+ qtdeArtigo + "', '"+ jogoId + "', '"+ qtdeJogo + "')";
             con.Open();
             SqlCommand cadArtigo = new SqlCommand(sql, con);
             cadArtigo.ExecuteNonQuery();

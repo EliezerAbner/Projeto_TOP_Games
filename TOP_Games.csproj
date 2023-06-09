@@ -133,6 +133,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="classeCliente.cs" />
+    <Compile Include="topGamesDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>topGamesDBDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormSplash.resx">
       <DependentUpon>FormSplash.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +187,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="topGamesDBDataSet.xsc">
+      <DependentUpon>topGamesDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="topGamesDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>topGamesDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="topGamesDBDataSet.xss">
+      <DependentUpon>topGamesDBDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
