@@ -17,31 +17,32 @@ namespace TOP_Games
 
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Programas\\Projeto_TOP_Games\\topGamesDB.mdf;Integrated Security=True");
 
-        public List<Venda> listaPedidos(string produto, string produtoId)
+        public List<Venda> listaPedidos(string produto, int vendaId)
         {
-            List<Venda> li = new List<Venda> ();
-            string sql = "";
+            List<Venda> li = new List<Venda>();
+            string sql="";
             
             if(produto == "ARTIGO")
             {
-                sql = "EXEC listaArtigo @artigoId '"+ produtoId + "'";
+                sql = "EXEC listaArtigo  @vendaId = '"+vendaId+"'";
             }
-            else if (produto == "JOGO")
+            else if(produto == "JOGO")
             {
-                sql = "EXEC listaJogo @jogoId = '"+ produtoId + "'";
+                sql = "EXEC listaJogo  @vendaId = '"+vendaId+"'";
             }
 
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            while (dataReader.Read())
             {
-                Venda listaVenda = new Venda ();
-
-                listaVenda.produto = dr["PRODUTO"].ToString();
-                listaVenda.quantidade = (int)dr["QUANTIDADE"];
-                listaVenda.precoUnitario = Convert.ToDecimal(dr["PRECO_UNITARIO"]);
+                Venda venda = new Venda();
+                venda.produto = dataReader["PRODUTO"].ToString();
+                venda.quantidade = (int)dataReader["QUANTIDADE"];
+                venda.precoUnitario = Convert.ToDecimal(dataReader["PRECO_UNITARIO"]);
+                li.Add(venda);
             }
+            con.Close();
             return li;
         }
 
@@ -65,7 +66,7 @@ namespace TOP_Games
             con.Close();
         }
 
-        public void AtualizarVenda(int vendaId, decimal precoTotal)
+        public void ConcluirVenda(int vendaId, decimal precoTotal)
         {
             string sql = "UPDATE Vendas SET valorTotal='" + precoTotal + "' WHERE vendaId ='"+vendaId+"'";
             con.Open();

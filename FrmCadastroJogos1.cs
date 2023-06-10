@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TOP_Games
@@ -22,34 +16,52 @@ namespace TOP_Games
             Jogo jogos = new Jogo();
             List<Jogo> listaJogos = jogos.listaJogos();
             dgvCadJogos.DataSource = listaJogos;
+            btnAtualizar.Enabled = false;
+            btnApagar.Enabled = false;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Jogo cadJogos = new Jogo();
-            cadJogos.Cadastrar(txtTitulo.Text, txtPlataforma.Text, txtGenero.Text, txtDesenvolvedora.Text, txtAnoLancamento.Text, txtQuantidade.Text, txtPrecoVenda.Text);
-            MessageBox.Show("Jogo Cadastrado com sucesso!!");
-            List<Jogo> listaJogos = cadJogos.listaJogos();
-            dgvCadJogos.DataSource = listaJogos;
+            if (verificaVazios())
+            {
+                Jogo cadJogos = new Jogo();
+                string precoVenda = txtPrecoVenda.Text.Replace(",", ".");
 
-            txtTitulo.Text = "";
-            txtPlataforma.Text = "";
-            txtGenero.Text = "";
-            txtDesenvolvedora.Text = "";
-            txtAnoLancamento.Text = "";
-            txtQuantidade.Text = "";
-            txtPrecoVenda.Text = "";
+                if (cadJogos.Cadastrar(txtTitulo.Text, txtPlataforma.Text, txtGenero.Text, txtDesenvolvedora.Text, txtAnoLancamento.Text, txtQuantidade.Text, precoVenda))
+                {
+                    MessageBox.Show("Jogo cadastrado com sucesso!!");
+                }
+                else
+                {
+                    MessageBox.Show("Jogo já cadastrado!");
+                }
+
+                List<Jogo> listaJogos = cadJogos.listaJogos();
+                dgvCadJogos.DataSource = listaJogos;
+
+                txtId.Text = "";
+                txtTitulo.Text = "";
+                txtPlataforma.Text = "";
+                txtGenero.Text = "";
+                txtDesenvolvedora.Text = "";
+                txtAnoLancamento.Text = "";
+                txtQuantidade.Text = "";
+                txtPrecoVenda.Text = "";
+            }
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             int Id = int.Parse(txtId.Text.Trim());
+            string precoVenda = txtPrecoVenda.Text.Replace(",", ".");
             Jogo atualizarJogos = new Jogo();
-            atualizarJogos.Atualizar(Id, txtTitulo.Text, txtPlataforma.Text, txtGenero.Text, txtDesenvolvedora.Text, txtAnoLancamento.Text, txtQuantidade.Text, txtPrecoVenda.Text);
+
+            atualizarJogos.Atualizar(Id, txtTitulo.Text, txtPlataforma.Text, txtGenero.Text, txtDesenvolvedora.Text, txtAnoLancamento.Text, txtQuantidade.Text, precoVenda);
             MessageBox.Show("Jogo atualizado com sucesso!!");
             List<Jogo> listaJogos = atualizarJogos.listaJogos();
             dgvCadJogos.DataSource = listaJogos;
 
+            txtId.Text = "";
             txtTitulo.Text = "";
             txtPlataforma.Text = "";
             txtGenero.Text = "";
@@ -68,6 +80,7 @@ namespace TOP_Games
             List<Jogo> listaJogos = apagarJogos.listaJogos();
             dgvCadJogos.DataSource = listaJogos;
 
+            txtId.Text = "";
             txtTitulo.Text = "";
             txtPlataforma.Text = "";
             txtGenero.Text = "";
@@ -91,11 +104,34 @@ namespace TOP_Games
             txtDesenvolvedora.Text = buscaJogo.desenvolvedora;
             txtAnoLancamento.Text = buscaJogo.anoLancamento;
             txtQuantidade.Text = buscaJogo.quantidade;
-            txtPrecoVenda.Text = buscaJogo.precoVenda;
+            txtPrecoVenda.Text = buscaJogo.precoVenda.Replace(".", ",");
+
+            btnApagar.Enabled = true;
+            btnAtualizar.Enabled = true;
+        }
+
+        public bool verificaVazios()
+        {
+            if(txtTitulo.Text == "" || txtPlataforma.Text == "" || txtGenero.Text == "" || txtDesenvolvedora.Text == "" || txtAnoLancamento.Text == "" || txtQuantidade.Text == "" || txtPrecoVenda.Text == "")
+            {
+                MessageBox.Show("Preencha todos os campos!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
 
 /*
- * falta tratar: preço, inserção/atualizacao com valores faltando
-*/
+ * caso precise:
+ * 
+ * using System.ComponentModel;
+ * using System.Data;
+ * using System.Drawing;
+ * using System.Linq;
+ * using System.Text;
+ * using System.Threading.Tasks;
+ */

@@ -37,14 +37,19 @@ namespace TOP_Games
             return li;
         }
 
-        public void Cadastrar(string nome, string quantidade, string precoVenda, string descricao)
+        public bool Cadastrar(string nome, string quantidade, string precoVenda, string descricao)
         {
-            float preco = float.Parse(precoVenda);
-            string sql = "INSERT INTO Artigos (nome, quantidade, precoVenda, descricao) VALUES ('"+nome+"', '"+quantidade+"', '"+ preco+ "', '"+descricao+"')";
-            con.Open();
-            SqlCommand cadArtigo = new SqlCommand(sql, con);
-            cadArtigo.ExecuteNonQuery();
-            con.Close();
+            if (verificaDuplicados(nome))
+            {
+                float preco = float.Parse(precoVenda);
+                string sql = "INSERT INTO Artigos (nome, quantidade, precoVenda, descricao) VALUES ('" + nome + "', '" + quantidade + "', '" + preco + "', '" + descricao + "')";
+                con.Open();
+                SqlCommand cadArtigo = new SqlCommand(sql, con);
+                cadArtigo.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            return false;
         }
 
         public void Atualizar(int Id, string nome, string quantidade, string precoVenda, string descricao)
@@ -79,6 +84,24 @@ namespace TOP_Games
                 descricao = dataReader["descricao"].ToString();
             }
             con.Close();
+        }
+
+        public bool verificaDuplicados(string nome)
+        {
+            string sql = "SELECT * FROM Artigos WHERE nome='" + nome + "'";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            if (dataReader.HasRows)
+            {
+                con.Close();
+                return false;
+            }
+            else
+            {
+                con.Close();
+                return true;
+            }
         }
 
         public void Quantidade(int Id, int carrinho, bool addSub) //addSub true = adiciona, addSub false = subtrai

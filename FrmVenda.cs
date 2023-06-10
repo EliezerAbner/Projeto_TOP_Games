@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace TOP_Games
         public int qtdeDisponivel {  get; set; }
         public int qtdeCarrinho { get ; set; }
         public int vendaId { get; set; }
+        public decimal precoProduto { get; set; }
 
         public FrmVenda()
         {
@@ -25,6 +27,7 @@ namespace TOP_Games
         private void FrmVenda_Load(object sender, EventArgs e)
         {
             lblQuantidade.Text = "1";
+            qtdeCarrinho = 1;
             vendaId = 0;
             btnSubtrair.Enabled = false;
             btnAdicionar.Enabled = false;
@@ -41,15 +44,20 @@ namespace TOP_Games
                 artigo.Buscar(Convert.ToInt16(txtId.Text));
 
                 lblProduto.Text = artigo.nome;
-                lblValorUnitario.Text = pastorSistemaMetrico(artigo.precoVenda);
                 
-                if(Convert.ToInt16(artigo.quantidade) == 0)
+                if(lblProduto.Text == "")
                 {
-                    faltaEstoque();
+                    mensagem("ID não encontrado!");
+                }
+                else if(Convert.ToInt16(artigo.quantidade) == 0)
+                {
+                    mensagem("Não há estoque disponível para este produto.");
                 }
                 else
                 {
                     qtdeDisponivel = Convert.ToInt16(artigo.quantidade);
+                    precoProduto = Convert.ToDecimal(artigo.precoVenda);
+                    lblValorUnitario.Text = pastorSistemaMetrico(artigo.precoVenda);
                 }
 
             }
@@ -61,16 +69,21 @@ namespace TOP_Games
                 Jogo jogo = new Jogo();
                 jogo.Buscar(Convert.ToInt16(txtId.Text));
 
-                lblProduto.Text = jogo.titulo;
-                lblValorUnitario.Text = pastorSistemaMetrico(jogo.precoVenda);
+                lblProduto.Text = ""+jogo.titulo+", "+jogo.plataforma+"";
 
+                if (lblProduto.Text == "")
+                {
+                    MessageBox.Show("ID não encontrado!");
+                }
                 if(Convert.ToInt16(jogo.quantidade) == 0)
                 {
-                    faltaEstoque();
+                    mensagem("Não há estoque disponível para este produto.");
                 }
                 else
                 {
                     qtdeDisponivel = Convert.ToInt16(jogo.quantidade);
+                    precoProduto = Convert.ToDecimal(jogo.precoVenda);
+                    lblValorUnitario.Text = pastorSistemaMetrico(jogo.precoVenda);
                 }
             }
             else
@@ -78,9 +91,9 @@ namespace TOP_Games
                 MessageBox.Show("Selecione o tipo do produto!");
             }
 
-            void faltaEstoque()
+            void mensagem(string msg)
             {
-                MessageBox.Show("Não há estoque disponível para este produto.");
+                MessageBox.Show(msg);
                 txtId.Text = "";
                 lblProduto.Text = "";
                 lblValorUnitario.Text = "";
@@ -128,6 +141,10 @@ namespace TOP_Games
         {
             DateTime dataVenda = DateTime.Now;
             string idProduto = txtId.Text.Trim();
+            string tipoProduto = "";
+
+            btnSubtrair.Enabled = false;
+            btnAdicionar.Enabled = false;
 
             Venda realizarVenda = new Venda();
 
@@ -141,18 +158,46 @@ namespace TOP_Games
             {
                 realizarVenda.InserirPedido(vendaId, idProduto, Convert.ToString(qtdeCarrinho), "", "");
                 Venda vendas = new Venda();
-                List<Venda> listaPedidos = vendas.listaPedidos("ARTIGO", idProduto);
+                List<Venda> listaPedidos = vendas.listaPedidos("ARTIGO", vendaId);
                 dgvVendas.DataSource = listaPedidos;
+                dgvVendas.Columns["vendaId"].Visible = false;
+                tipoProduto = "ARTIGO";
+
             }
             else if (chbJogo.Checked)
             {
                 realizarVenda.InserirPedido(vendaId, "", "", idProduto, Convert.ToString(qtdeCarrinho));
                 Venda vendas = new Venda();
-                List<Venda> listaPedidos = vendas.listaPedidos("JOGO", idProduto);
+                List<Venda> listaPedidos = vendas.listaPedidos("JOGO", vendaId);
                 dgvVendas.DataSource = listaPedidos;
                 dgvVendas.Columns["vendaId"].Visible = false;
-                Console.WriteLine("teste");
-            }   
+                tipoProduto = "JOGO";
+
+            }
+
+            string[,] retirarDoEstoque = { { idProduto, Convert.ToString(qtdeCarrinho), tipoProduto } };
+
+            if (lblSubtotal.Text == "")
+            {
+                lblSubtotal.Text = Convert.ToString(precoProduto);
+            }
+            else
+            {
+                decimal total = (precoProduto * qtdeCarrinho) + Convert.ToDecimal(lblSubtotal.Text);
+                lblSubtotal.Text = total.ToString();
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            var resposta = MessageBox.Show("Deseja cancelar venda?", "Cancelar venda", MessageBoxButtons.YesNo);
+
+            if(resposta == DialogResult.Yes)
+            {
+                
+
+                
+            }
         }
 
         private void chbArtigo_CheckedChanged(object sender, EventArgs e)

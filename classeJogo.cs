@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TOP_Games
 {
@@ -44,14 +45,19 @@ namespace TOP_Games
             return li;
         }
 
-        public void Cadastrar(string titulo, string plataforma, string genero, string desenvolvedora, string anoLancamento, string quantidade, string precoVenda)
+        public bool Cadastrar(string titulo, string plataforma, string genero, string desenvolvedora, string anoLancamento, string quantidade, string precoVenda)
         {
-            float preco = float.Parse(precoVenda);
-            string sql = "INSERT INTO Jogos (titulo, plataforma, genero, desenvolvedora, anoLancamento, quantidade, precoVenda) VALUES ('"+titulo+"', '"+ plataforma + "', '"+ genero + "', '"+ desenvolvedora + "', '"+ anoLancamento + "', '"+ quantidade + "', '"+preco+"')";
-            con.Open();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
+            if (verificaDuplicado(titulo, plataforma))
+            {
+                float preco = float.Parse(precoVenda);
+                string sql = "INSERT INTO Jogos (titulo, plataforma, genero, desenvolvedora, anoLancamento, quantidade, precoVenda) VALUES ('" + titulo + "', '" + plataforma + "', '" + genero + "', '" + desenvolvedora + "', '" + anoLancamento + "', '" + quantidade + "', '" + preco + "')";
+                con.Open();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            return false;
         }
 
         public void Atualizar(int Id, string titulo, string plataforma, string genero, string desenvolvedora, string anoLancamento, string quantidade, string precoVenda)
@@ -91,6 +97,25 @@ namespace TOP_Games
                 precoVenda = dataReader["precoVenda"].ToString();
             }
             con.Close();
+        }
+
+        public bool verificaDuplicado(string titulo, string plataforma)
+        {
+            string sql = "SELECT * FROM Jogos WHERE titulo='" + titulo + "' AND plataforma='" + plataforma + "'";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            if (dataReader.HasRows)
+            {
+                con.Close();
+                return false;
+            }
+            else
+            {
+                con.Close();
+                return true;
+            }
+            
         }
 
         public void Quantidade(int Id, int carrinho, bool addSub) //addSub true = adiciona, addSub false = subtrai

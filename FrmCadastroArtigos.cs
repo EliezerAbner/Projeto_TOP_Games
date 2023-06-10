@@ -26,25 +26,38 @@ namespace TOP_Games
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Artigo cadArtigo = new Artigo();
-            cadArtigo.Cadastrar(txtNome.Text, txtQuantidade.Text, txtPrecoVenda.Text, txtDescricao.Text);
-            MessageBox.Show("Artigo cadastrado com sucesso!!");
-            List<Artigo> art = cadArtigo.listaArtigos();
-            dgvCadArtigos.DataSource= art;
+            if (verificaVazios())
+            {
+                Artigo cadArtigo = new Artigo();
+                string precoVenda = txtPrecoVenda.Text.Replace(",", ".");
 
-            txtId.Text = "";
-            txtNome.Text = "";
-            txtQuantidade.Text = "";
-            txtPrecoVenda.Text = "";
-            txtDescricao.Text = "";
+                if (cadArtigo.Cadastrar(txtNome.Text, txtQuantidade.Text, precoVenda, txtDescricao.Text))
+                {
+                    MessageBox.Show("Artigo cadastrado com sucesso!!");
+                }
+                else
+                {
+                    MessageBox.Show("Artigo já cadastrado!");
+                }
+
+                List<Artigo> art = cadArtigo.listaArtigos();
+                dgvCadArtigos.DataSource = art;
+
+                txtId.Text = "";
+                txtNome.Text = "";
+                txtQuantidade.Text = "";
+                txtPrecoVenda.Text = "";
+                txtDescricao.Text = "";
+            }
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             Artigo atualizarArtigo = new Artigo();
             int Id = int.Parse(txtId.Text);
+            string precoVenda = txtPrecoVenda.Text.Replace(",", ".");
 
-            atualizarArtigo.Atualizar(Id, txtNome.Text, txtQuantidade.Text, txtPrecoVenda.Text, txtDescricao.Text);
+            atualizarArtigo.Atualizar(Id, txtNome.Text, txtQuantidade.Text, precoVenda, txtDescricao.Text);
             MessageBox.Show("Artigo atualizado com sucesso!!");
             List<Artigo> art = atualizarArtigo.listaArtigos();
             dgvCadArtigos.DataSource = art;
@@ -81,14 +94,20 @@ namespace TOP_Games
 
             txtNome.Text = buscarArtigo.nome;
             txtQuantidade.Text = buscarArtigo.quantidade;
-            txtPrecoVenda.Text = buscarArtigo.precoVenda;
+            txtPrecoVenda.Text = buscarArtigo.precoVenda.Replace(".", ",");
             txtDescricao.Text = buscarArtigo.descricao;
         }
 
-        private bool ehNumerico(TextBox txt)
+        public bool verificaVazios()
         {
-            //return bool isNumeric = int.TryParse(txt.Text, out )
+            if(txtNome.Text == "" || txtQuantidade.Text == "" || txtPrecoVenda.Text == "" || txtDescricao.Text == "")
+            {
+                MessageBox.Show("Preencha todos os campos!");
+                return false;
+            }
             return true;
         }
+
+        
     }
 }

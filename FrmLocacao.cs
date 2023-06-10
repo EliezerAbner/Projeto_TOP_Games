@@ -1,14 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Globalization;
 
 namespace TOP_Games
 {
@@ -88,22 +80,18 @@ namespace TOP_Games
                 dataLocacao = DateTime.Now.ToString("yyyy-MM-dd");
                 int idJogo = int.Parse(txtIdJogo.Text);
                 int idCliente = int.Parse(txtIdCliente.Text);
-                //DateTime retorno = DateTime.ParseExact(txtDataRetorno.Text, "dd/MM/yyyy", null);
-                //string dataRetorno = converterDatas(retorno);
-
-                //string dataRetorno = converterDatas(Convert.ToDateTime(txtDataRetorno.Text.Trim()));
-
+                
                 Locacao addProduto = new Locacao();
                 addProduto.adicionarLocacao(dataLocacao, calendario, idJogo, idCliente);
 
                 Locacao locacoes = new Locacao();
                 dataLocacao = DateTime.Now.ToString("yyyy-MM-dd");
+                
                 List<Locacao> listaLocacoes = locacoes.listaLocacao(int.Parse(txtIdCliente.Text), dataLocacao);
                 dgvLocacao.DataSource = listaLocacoes;
                 txtIdJogo.Focus();
                 idJogoTxt = txtIdJogo.Text;
                 txtIdJogo.Text = "";
-                //txtDataRetorno.Text = "";
                 lblJogo.Text = "";
                 lblPlataforma.Text = "";
 

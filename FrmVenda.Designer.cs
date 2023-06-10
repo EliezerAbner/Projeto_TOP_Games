@@ -1,4 +1,8 @@
-﻿namespace TOP_Games
+﻿using System.Drawing;
+using System.Reflection.Emit;
+using System.Windows.Forms;
+
+namespace TOP_Games
 {
     partial class FrmVenda
     {
@@ -28,7 +32,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnAddProdutos = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -62,8 +65,6 @@
             this.chbArtigo = new System.Windows.Forms.CheckBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.topGamesDBDataSet = new TOP_Games.topGamesDBDataSet();
-            this.topGamesDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -72,8 +73,6 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.topGamesDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.topGamesDBDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOk
@@ -116,6 +115,7 @@
             this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnFinalizarCompra
             // 
@@ -174,9 +174,8 @@
             this.lblQuantidade.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.lblQuantidade.Location = new System.Drawing.Point(0, 30);
             this.lblQuantidade.Name = "lblQuantidade";
-            this.lblQuantidade.Size = new System.Drawing.Size(146, 37);
+            this.lblQuantidade.Size = new System.Drawing.Size(0, 37);
             this.lblQuantidade.TabIndex = 1;
-            this.lblQuantidade.Text = "sdfsdfsdfs";
             this.lblQuantidade.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // label13
@@ -195,7 +194,7 @@
             this.panel6.Controls.Add(this.label12);
             this.panel6.Controls.Add(this.lblValorUnitario);
             this.panel6.Controls.Add(this.label11);
-            this.panel6.Location = new System.Drawing.Point(12, 240);
+            this.panel6.Location = new System.Drawing.Point(12, 268);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(266, 66);
             this.panel6.TabIndex = 20;
@@ -216,11 +215,10 @@
             this.lblValorUnitario.AutoSize = true;
             this.lblValorUnitario.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblValorUnitario.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblValorUnitario.Location = new System.Drawing.Point(71, 30);
+            this.lblValorUnitario.Location = new System.Drawing.Point(266, 30);
             this.lblValorUnitario.Name = "lblValorUnitario";
-            this.lblValorUnitario.Size = new System.Drawing.Size(195, 30);
+            this.lblValorUnitario.Size = new System.Drawing.Size(0, 30);
             this.lblValorUnitario.TabIndex = 1;
-            this.lblValorUnitario.Text = "sdfsdfsdfsfsfsfsdf";
             this.lblValorUnitario.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // label11
@@ -240,20 +238,19 @@
             this.panel5.Controls.Add(this.label9);
             this.panel5.Location = new System.Drawing.Point(12, 147);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(266, 66);
+            this.panel5.Size = new System.Drawing.Size(404, 115);
             this.panel5.TabIndex = 19;
             // 
             // lblProduto
             // 
-            this.lblProduto.AutoSize = true;
-            this.lblProduto.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblProduto.AutoEllipsis = true;
+            this.lblProduto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblProduto.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblProduto.Location = new System.Drawing.Point(71, 30);
+            this.lblProduto.Location = new System.Drawing.Point(0, 30);
             this.lblProduto.Name = "lblProduto";
-            this.lblProduto.Size = new System.Drawing.Size(195, 30);
+            this.lblProduto.Size = new System.Drawing.Size(404, 85);
             this.lblProduto.TabIndex = 1;
-            this.lblProduto.Text = "sdfsdfsdfsfsfsfsdf";
-            this.lblProduto.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.lblProduto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label9
             // 
@@ -323,11 +320,10 @@
             this.lblTroco.AutoSize = true;
             this.lblTroco.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblTroco.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTroco.Location = new System.Drawing.Point(85, 30);
+            this.lblTroco.Location = new System.Drawing.Point(280, 30);
             this.lblTroco.Name = "lblTroco";
-            this.lblTroco.Size = new System.Drawing.Size(195, 30);
+            this.lblTroco.Size = new System.Drawing.Size(0, 30);
             this.lblTroco.TabIndex = 1;
-            this.lblTroco.Text = "sdfsdfsdfsfsfsfsdf";
             this.lblTroco.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // label5
@@ -368,9 +364,8 @@
             this.lblSubtotal.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblSubtotal.Location = new System.Drawing.Point(398, 21);
             this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(195, 30);
+            this.lblSubtotal.Size = new System.Drawing.Size(0, 30);
             this.lblSubtotal.TabIndex = 1;
-            this.lblSubtotal.Text = "sdfsdfsdfsfsfsfsdf";
             this.lblSubtotal.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // label3
@@ -449,16 +444,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
-            // topGamesDBDataSet
-            // 
-            this.topGamesDBDataSet.DataSetName = "topGamesDBDataSet";
-            this.topGamesDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // topGamesDBDataSetBindingSource
-            // 
-            this.topGamesDBDataSetBindingSource.DataSource = this.topGamesDBDataSet;
-            this.topGamesDBDataSetBindingSource.Position = 0;
-            // 
             // FrmVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,8 +481,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.topGamesDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.topGamesDBDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -537,7 +520,5 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.BindingSource topGamesDBDataSetBindingSource;
-        private topGamesDBDataSet topGamesDBDataSet;
     }
 }
