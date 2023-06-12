@@ -86,3 +86,4 @@ C:\Programas\Projeto_TOP_Games\EliezerAbner\Projeto_TOP_Games\obj\Debug\TOP_Game
 C:\Programas\Projeto_TOP_Games\EliezerAbner\Projeto_TOP_Games\obj\Debug\TOP_Games.csproj.CoreCompileInputs.cache
 C:\Programas\Projeto_TOP_Games\EliezerAbner\Projeto_TOP_Games\obj\Debug\TOP_Games.exe
 C:\Programas\Projeto_TOP_Games\EliezerAbner\Projeto_TOP_Games\obj\Debug\TOP_Games.pdb
+C:\Programas\Projeto_TOP_Games\obj\Debug\TOP_Games.Sobre.resources

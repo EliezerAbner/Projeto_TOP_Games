@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TOP_Games
@@ -141,24 +134,20 @@ namespace TOP_Games
             locacaoPreco.Show();
         }
 
+        private void btnSobre_Click(object sender, EventArgs e)
+        {
+            Sobre frmSobre = new Sobre();
+            frmSobre.Show();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+        }
+
         private void btnSairIcone_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
+            Close();
         }
     }
 }

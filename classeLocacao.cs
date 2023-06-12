@@ -76,5 +76,28 @@ namespace TOP_Games
             }
             con.Close();
         }
+
+        public List<Locacao> listaTodasLocacoes()
+        {
+            List<Locacao> li = new List<Locacao>();
+            string sql = "SELECT * FROM Locacao";
+
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            while (dataReader.Read()) 
+            {
+                Locacao locacoes = new Locacao();
+
+                locacoes.locacaoId = (int)dataReader["locacaoId"];
+                locacoes.jogoId = (int)dataReader["jogoId"];
+                locacoes.clienteId = (int)dataReader["jogoId"];
+                locacoes.dataRetorno = dataReader["dataRetorno"].ToString();
+
+                li.Add(locacoes);
+            }
+            con.Close();
+            return li;
+        }
     }
 }

@@ -117,114 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;btnVenda.Name" xml:space="preserve">
-    <value>btnVenda</value>
-  </data>
-  <data name="&gt;&gt;btnVenda.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnVenda.Parent" xml:space="preserve">
-    <value>panelMenu</value>
-  </data>
-  <data name="&gt;&gt;btnVenda.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelLocacao.Name" xml:space="preserve">
-    <value>panelLocacao</value>
-  </data>
-  <data name="&gt;&gt;panelLocacao.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelLocacao.Parent" xml:space="preserve">
-    <value>panelMenu</value>
-  </data>
-  <data name="&gt;&gt;panelLocacao.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnLocacao.Name" xml:space="preserve">
-    <value>btnLocacao</value>
-  </data>
-  <data name="&gt;&gt;btnLocacao.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnLocacao.Parent" xml:space="preserve">
-    <value>panelMenu</value>
-  </data>
-  <data name="&gt;&gt;btnLocacao.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;panelCadastro.Name" xml:space="preserve">
-    <value>panelCadastro</value>
-  </data>
-  <data name="&gt;&gt;panelCadastro.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelCadastro.Parent" xml:space="preserve">
-    <value>panelMenu</value>
-  </data>
-  <data name="&gt;&gt;panelCadastro.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;btnCadastro.Name" xml:space="preserve">
-    <value>btnCadastro</value>
-  </data>
-  <data name="&gt;&gt;btnCadastro.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCadastro.Parent" xml:space="preserve">
-    <value>panelMenu</value>
-  </data>
-  <data name="&gt;&gt;btnCadastro.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>panelMenu</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panelMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="panelMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panelMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="panelMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 661</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panelMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;panelMenu.Name" xml:space="preserve">
-    <value>panelMenu</value>
-  </data>
-  <data name="&gt;&gt;panelMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelMenu.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panelMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="btnVenda.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
   <data name="btnVenda.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnVenda.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt, style=Bold</value>
   </data>
@@ -243,6 +143,7 @@
   <data name="btnVenda.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 45</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnVenda.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -263,66 +164,6 @@
   </data>
   <data name="&gt;&gt;btnVenda.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnControleMultas.Name" xml:space="preserve">
-    <value>btnControleMultas</value>
-  </data>
-  <data name="&gt;&gt;btnControleMultas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnControleMultas.Parent" xml:space="preserve">
-    <value>panelLocacao</value>
-  </data>
-  <data name="&gt;&gt;btnControleMultas.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnDevolucao.Name" xml:space="preserve">
-    <value>btnDevolucao</value>
-  </data>
-  <data name="&gt;&gt;btnDevolucao.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDevolucao.Parent" xml:space="preserve">
-    <value>panelLocacao</value>
-  </data>
-  <data name="&gt;&gt;btnDevolucao.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnRealizarLocacao.Name" xml:space="preserve">
-    <value>btnRealizarLocacao</value>
-  </data>
-  <data name="&gt;&gt;btnRealizarLocacao.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnRealizarLocacao.Parent" xml:space="preserve">
-    <value>panelLocacao</value>
-  </data>
-  <data name="&gt;&gt;btnRealizarLocacao.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panelLocacao.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panelLocacao.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 364</value>
-  </data>
-  <data name="panelLocacao.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 95</value>
-  </data>
-  <data name="panelLocacao.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panelLocacao.Name" xml:space="preserve">
-    <value>panelLocacao</value>
-  </data>
-  <data name="&gt;&gt;panelLocacao.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelLocacao.Parent" xml:space="preserve">
-    <value>panelMenu</value>
-  </data>
-  <data name="&gt;&gt;panelLocacao.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="btnControleMultas.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -459,6 +300,30 @@
   <data name="&gt;&gt;btnRealizarLocacao.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="panelLocacao.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelLocacao.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 364</value>
+  </data>
+  <data name="panelLocacao.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 95</value>
+  </data>
+  <data name="panelLocacao.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panelLocacao.Name" xml:space="preserve">
+    <value>panelLocacao</value>
+  </data>
+  <data name="&gt;&gt;panelLocacao.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelLocacao.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;panelLocacao.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="btnLocacao.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -503,72 +368,6 @@
   </data>
   <data name="&gt;&gt;btnLocacao.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnCadastroJogos.Name" xml:space="preserve">
-    <value>btnCadastroJogos</value>
-  </data>
-  <data name="&gt;&gt;btnCadastroJogos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCadastroJogos.Parent" xml:space="preserve">
-    <value>panelCadastro</value>
-  </data>
-  <data name="&gt;&gt;btnCadastroJogos.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnCadastroArtigos.Name" xml:space="preserve">
-    <value>btnCadastroArtigos</value>
-  </data>
-  <data name="&gt;&gt;btnCadastroArtigos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCadastroArtigos.Parent" xml:space="preserve">
-    <value>panelCadastro</value>
-  </data>
-  <data name="&gt;&gt;btnCadastroArtigos.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnCadastroClientes.Name" xml:space="preserve">
-    <value>btnCadastroClientes</value>
-  </data>
-  <data name="&gt;&gt;btnCadastroClientes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnCadastroClientes.Parent" xml:space="preserve">
-    <value>panelCadastro</value>
-  </data>
-  <data name="&gt;&gt;btnCadastroClientes.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panelCadastro.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panelCadastro.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Symbol, 9pt</value>
-  </data>
-  <data name="panelCadastro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 207</value>
-  </data>
-  <data name="panelCadastro.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="panelCadastro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 112</value>
-  </data>
-  <data name="panelCadastro.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panelCadastro.Name" xml:space="preserve">
-    <value>panelCadastro</value>
-  </data>
-  <data name="&gt;&gt;panelCadastro.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelCadastro.Parent" xml:space="preserve">
-    <value>panelMenu</value>
-  </data>
-  <data name="&gt;&gt;panelCadastro.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="btnCadastroJogos.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -705,6 +504,36 @@
   <data name="&gt;&gt;btnCadastroClientes.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="panelCadastro.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panelCadastro.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Symbol, 9pt</value>
+  </data>
+  <data name="panelCadastro.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 207</value>
+  </data>
+  <data name="panelCadastro.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="panelCadastro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 112</value>
+  </data>
+  <data name="panelCadastro.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;panelCadastro.Name" xml:space="preserve">
+    <value>panelCadastro</value>
+  </data>
+  <data name="&gt;&gt;panelCadastro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelCadastro.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;panelCadastro.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="btnCadastro.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -783,6 +612,33 @@
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="panelMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="panelMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="panelMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 661</value>
+  </data>
+  <data name="panelMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelMenu.Name" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;panelMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelMenu.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="btnConfig.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -793,7 +649,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnConfig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>904, 0</value>
+    <value>862, 0</value>
   </data>
   <data name="btnConfig.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 35</value>
@@ -823,7 +679,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnSobre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>946, 0</value>
+    <value>904, 0</value>
   </data>
   <data name="btnSobre.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 35</value>
@@ -842,6 +698,36 @@
   </data>
   <data name="&gt;&gt;btnSobre.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnHome.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="btnHome.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnHome.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnHome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>946, 0</value>
+  </data>
+  <data name="btnHome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 35</value>
+  </data>
+  <data name="btnHome.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnHome.Name" xml:space="preserve">
+    <value>btnHome</value>
+  </data>
+  <data name="&gt;&gt;btnHome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnHome.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;btnHome.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="btnSairIcone.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -871,7 +757,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;btnSairIcone.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>

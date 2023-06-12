@@ -41,17 +41,18 @@
             this.btnCadastroArtigos = new System.Windows.Forms.Button();
             this.btnCadastroClientes = new System.Windows.Forms.Button();
             this.btnCadastro = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSobre = new System.Windows.Forms.Button();
             this.btnConfig = new System.Windows.Forms.Button();
+            this.btnSobre = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
             this.btnSairIcone = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelLocacao.SuspendLayout();
             this.panelCadastro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -163,30 +164,15 @@
             this.btnCadastro.UseVisualStyleBackColor = true;
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Image = global::TOP_Games.Properties.Resources.topGames_200_200;
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(159)))));
             this.panel2.Controls.Add(this.btnConfig);
             this.panel2.Controls.Add(this.btnSobre);
+            this.panel2.Controls.Add(this.btnHome);
             this.panel2.Controls.Add(this.btnSairIcone);
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // btnSobre
-            // 
-            resources.ApplyResources(this.btnSobre, "btnSobre");
-            this.btnSobre.FlatAppearance.BorderSize = 0;
-            this.btnSobre.Image = global::TOP_Games.Properties.Resources.question_modified;
-            this.btnSobre.Name = "btnSobre";
-            this.btnSobre.UseVisualStyleBackColor = true;
             // 
             // btnConfig
             // 
@@ -196,6 +182,24 @@
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.UseVisualStyleBackColor = true;
             this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
+            // 
+            // btnSobre
+            // 
+            resources.ApplyResources(this.btnSobre, "btnSobre");
+            this.btnSobre.FlatAppearance.BorderSize = 0;
+            this.btnSobre.Image = global::TOP_Games.Properties.Resources.question_modified;
+            this.btnSobre.Name = "btnSobre";
+            this.btnSobre.UseVisualStyleBackColor = true;
+            this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
+            // 
+            // btnHome
+            // 
+            resources.ApplyResources(this.btnHome, "btnHome");
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.Image = global::TOP_Games.Properties.Resources.home;
+            this.btnHome.Name = "btnHome";
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnSairIcone
             // 
@@ -212,7 +216,13 @@
             this.panel1.BackgroundImage = global::TOP_Games.Properties.Resources.topGames_splash_screen_200_200;
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Image = global::TOP_Games.Properties.Resources.topGames_200_200;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // FrmMenu
             // 
@@ -228,8 +238,8 @@
             this.panelMenu.ResumeLayout(false);
             this.panelLocacao.ResumeLayout(false);
             this.panelCadastro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,5 +264,6 @@
         private System.Windows.Forms.Button btnControleMultas;
         private System.Windows.Forms.Button btnDevolucao;
         private System.Windows.Forms.Button btnRealizarLocacao;
+        private System.Windows.Forms.Button btnHome;
     }
 }

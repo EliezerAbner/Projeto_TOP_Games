@@ -36,7 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblAtrasos = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -108,8 +108,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.lblAtrasos);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(602, 56);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(620, 56);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(173, 92);
             this.panel3.TabIndex = 2;
@@ -125,16 +125,16 @@
             this.lblAtrasos.Text = "asdasd";
             this.lblAtrasos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // label3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(34, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 25);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Atrasos";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(173, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Atrasos";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmLocacaoControle
             // 
@@ -149,6 +149,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmLocacaoControle";
             this.Text = "FrmLocacaoControle";
+            this.Load += new System.EventHandler(this.FrmLocacaoControle_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -169,6 +170,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblAtrasos;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
     }
 }
