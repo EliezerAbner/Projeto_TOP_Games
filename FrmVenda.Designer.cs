@@ -129,6 +129,7 @@ namespace TOP_Games
             this.btnFinalizarCompra.TabIndex = 22;
             this.btnFinalizarCompra.Text = "Finalizar Compra";
             this.btnFinalizarCompra.UseVisualStyleBackColor = false;
+            this.btnFinalizarCompra.Click += new System.EventHandler(this.btnFinalizarCompra_Click);
             // 
             // panel7
             // 

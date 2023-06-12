@@ -31,11 +31,20 @@ namespace TOP_Games
             vendaId = 0;
             btnSubtrair.Enabled = false;
             btnAdicionar.Enabled = false;
+            btnFinalizarCompra.Enabled = false;
+            btnAddProdutos.Enabled = false;
+            btnCancelar.Enabled = false;
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if(chbArtigo.Checked)
+            btnAddProdutos.Enabled = true;
+
+            if (txtId.Text == "")
+            {
+                MessageBox.Show("Insira o Id do produto!");
+            }
+            else if(chbArtigo.Checked)
             {   
                 btnAdicionar.Enabled = true;
                 btnSubtrair.Enabled = true;
@@ -111,7 +120,7 @@ namespace TOP_Games
             }
             else
             {
-                qtde = qtde + 1;
+                qtde++;
 
                 qtdeCarrinho = qtde;
                 lblQuantidade.Text = Convert.ToString(qtde);
@@ -129,7 +138,7 @@ namespace TOP_Games
             }
             else
             {
-                qtde = qtde - 1;
+                qtde--;
 
                 qtdeCarrinho = qtde;
                 lblQuantidade.Text = Convert.ToString(qtde);
@@ -141,10 +150,11 @@ namespace TOP_Games
         {
             DateTime dataVenda = DateTime.Now;
             string idProduto = txtId.Text.Trim();
-            string tipoProduto = "";
 
             btnSubtrair.Enabled = false;
             btnAdicionar.Enabled = false;
+            btnFinalizarCompra.Enabled = true;
+            btnCancelar.Enabled = true;
 
             Venda realizarVenda = new Venda();
 
@@ -156,26 +166,27 @@ namespace TOP_Games
 
             if (chbArtigo.Checked)
             {
-                realizarVenda.InserirPedido(vendaId, idProduto, Convert.ToString(qtdeCarrinho), "", "");
+                realizarVenda.InserirPedido(vendaId, idProduto, qtdeCarrinho, "ARTIGO", precoProduto);
                 Venda vendas = new Venda();
-                List<Venda> listaPedidos = vendas.listaPedidos("ARTIGO", vendaId);
+                List<Venda> listaPedidos = vendas.listaPedidos(vendaId);
                 dgvVendas.DataSource = listaPedidos;
                 dgvVendas.Columns["vendaId"].Visible = false;
-                tipoProduto = "ARTIGO";
+                dgvVendas.Columns["tipoProduto"].Visible = false;
+                dgvVendas.Columns["produtoId"].Visible = false;
+                dgvVendas.Columns["pedidoId"].Visible = false;
 
             }
             else if (chbJogo.Checked)
             {
-                realizarVenda.InserirPedido(vendaId, "", "", idProduto, Convert.ToString(qtdeCarrinho));
+                realizarVenda.InserirPedido(vendaId, idProduto, qtdeCarrinho, "JOGO", precoProduto);
                 Venda vendas = new Venda();
-                List<Venda> listaPedidos = vendas.listaPedidos("JOGO", vendaId);
+                List<Venda> listaPedidos = vendas.listaPedidos(vendaId);
                 dgvVendas.DataSource = listaPedidos;
                 dgvVendas.Columns["vendaId"].Visible = false;
-                tipoProduto = "JOGO";
-
+                dgvVendas.Columns["tipoProduto"].Visible = false;
+                dgvVendas.Columns["produtoId"].Visible = false;
+                dgvVendas.Columns["pedidoId"].Visible = false;
             }
-
-            string[,] retirarDoEstoque = { { idProduto, Convert.ToString(qtdeCarrinho), tipoProduto } };
 
             if (lblSubtotal.Text == "")
             {
@@ -194,9 +205,15 @@ namespace TOP_Games
 
             if(resposta == DialogResult.Yes)
             {
-                
+                Venda cancelarPedido = new Venda();
+                cancelarPedido.ExcluirPedido(vendaId);
 
-                
+                List<Venda> listaPedidos = cancelarPedido.listaPedidos(vendaId);
+                dgvVendas.DataSource = listaPedidos;
+                dgvVendas.Columns["vendaId"].Visible = false;
+                dgvVendas.Columns["tipoProduto"].Visible = false;
+                dgvVendas.Columns["produtoId"].Visible = false;
+                dgvVendas.Columns["pedidoId"].Visible = false;
             }
         }
 
@@ -229,6 +246,53 @@ namespace TOP_Games
             string valorNovo = valorAntigo.Replace('.', ',');
 
             return valorNovo;
+        }
+
+        private void btnFinalizarCompra_Click(object sender, EventArgs e)
+        {
+            
+            btnCancelar.Enabled = false;
+            btnAddProdutos.Enabled = false;
+           
+            if(txtTotalRecebido.Text == "")
+            {
+                MessageBox.Show("Insira o valor recebido antes de finalizar a compra!");
+            }
+            else
+            {
+                decimal valorRecibo = Convert.ToDecimal(txtTotalRecebido.Text);
+                decimal precoTotal = Convert.ToDecimal(lblSubtotal.Text);
+                lblTroco.Text = (valorRecibo - precoTotal).ToString();
+
+                Venda finalizarVenda = new Venda();
+
+                List<Venda> listaPedidos = finalizarVenda.obterPedidos(vendaId);
+                
+                foreach(var i in listaPedidos)
+                {
+                    string tipoProduto = i.tipoProduto.ToString();
+
+                    if (tipoProduto == "ARTIGO")
+                    {
+                        Artigo retirarEstoque = new Artigo();
+                        retirarEstoque.Quantidade(i.produtoId, i.quantidade, false);
+                    }
+                    else if(tipoProduto == "JOGO")
+                    {
+                        Jogo retirarEstoque = new Jogo();
+                        retirarEstoque.Quantidade(i.produtoId, i.quantidade, false);
+                    }
+                }
+
+                finalizarVenda.ConcluirVenda(vendaId, precoTotal);
+
+                MessageBox.Show("Venda concluida com sucesso!");
+
+                txtId.Text = "";
+                lblProduto.Text = "";
+                lblValorUnitario.Text = "";
+                vendaId = 0;
+            }
         }
     }
 }
